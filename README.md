@@ -10,27 +10,33 @@ The repository is organized as follows:
 ├── `index.html` 🏠 Main / 👤 About page  
 ├── `README.md` 📖 Project documentation (you're reading this!)  
 ├── `favicon.ico` ✨ Favicon for the site  
+│
 ├── `html/` 📄 HTML pages  
 │   ├── `projects.html` 🛠️ Projects portfolio  
 │   └── `notes.html` 📝 Personal notes and blog posts  
+│
 ├── `css/` 🎨 Stylesheets  
-│         ├── `main.css` 🖌️ Core styling  
-│   ├── `navigation.css` 🔗 Navigation-specific styling  
+│   ├── `main.css` 🖌️ Core styling  
+│   ├── `notes.css` 🔗 notes-specific styling  
 │   └── `responsive.css` 📱 Responsive design for various screen sizes  
+│
 ├── `js/` ⚙️ JavaScript files  
-│   ├── `main.js` 💡 Core interactivity  
-│   ├── `darkMode.js` 🌙 Dark mode toggle functionality  
-│   └── `navigation.js` 🚀 Navigation bar scripts  
+│   ├── `notes.js` 💡 Notes functionality scripts  
+│   ├── `darkMode.js` 🌙 Dark mode toggle functionality   Coming soon
+│   └── `navigation.js` 🚀 Navigation bar scripts         Coming soon
+│
+├── `json`/  🗃️ Json files
+│   └── `notes.json` 📝 hold notes in json to populate site
+│
 └── `assets/` 🖼️ Assets such as images and icons  
+    │
     ├── `images/` 📸  
     │   ├── `profile-photo.jpg` 👤 Profile photo for the About page  
-    │   └── `project-thumbnails/` 🖼️ Thumbnails for project portfolio  
-    │       ├── `exmple.jpg`  
-    │       └── `example.jpg`  
+    │   └── `resume` 🖼️ image of my resume   
+    │
     └── `icons/` 🎯  
         ├── `github.svg` 🐙 GitHub icon  
-        ├── `linkedin.svg` 🔗 LinkedIn icon  
-        └── `menu.svg` 📜 Menu icon for navigation  
+        └── `linkedin.svg` 🔗 LinkedIn icon  
 ```
 ## 🌟 Features
 
