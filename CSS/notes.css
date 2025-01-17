@@ -1,0 +1,215 @@
+/* Notes Grid Layout */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.note-card {
+    background: var(--palette-offwhite-100);
+    border: 1px solid var(--palette-offgray-200);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.note-header {
+    margin-bottom: 1rem;
+}
+
+.note-header h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--palette-offgray-600);
+}
+
+.note-header time {
+    font-size: 0.9rem;
+    color: var(--palette-offgray-400);
+}
+
+.note-preview {
+    color: var(--palette-offgray-500);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag {
+    font-size: 0.8rem;
+    color: var(--palette-offgray-400);
+    margin-right: 0.5rem;
+}
+
+.read-more {
+    background: none;
+    border: 1px solid var(--palette-offgray-300);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--palette-offgray-500);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.read-more:hover {
+    background: var(--palette-offgray-200);
+    color: var(--palette-offgray-600);
+}
+
+/* Modal Styles */
+.note-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.note-modal-content {
+    background: var(--palette-offwhite-100);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--palette-offgray-400);
+}
+
+.close-button:hover {
+    color: var(--palette-offgray-600);
+}
+/* Modal Content Max Width */
+.note-modal-content {
+    background: var(--palette-offwhite-100);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 65ch;  /* Optimal line length for readability */
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Note Content Styling */
+.note-content {
+    line-height: 1.6;
+    padding: 1rem 0;
+    max-width: 65ch;  
+    margin: 0 auto;   
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/* Preview Text Line Length */
+.note-preview {
+    max-width: 65ch;
+    color: var(--palette-offgray-500);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+
+
+
+/* Note Content Styling */
+.note-content {
+    line-height: 1.6;
+    padding: 1rem 0;
+}
+
+.note-content h2,
+.note-content h3,
+.note-content h4 {
+    margin: 1.5rem 0 1rem;
+    color: var(--palette-offgray-600);
+}
+
+.note-content p {
+    margin-bottom: 1rem;
+}
+
+.note-content ul,
+.note-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.note-content li {
+    margin-bottom: 0.5rem;
+}
+
+.note-content blockquote {
+    border-left: 4px solid var(--palette-offgray-300);
+    margin: 1.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-style: italic;
+    color: var(--palette-offgray-500);
+}
+
+.note-content code {
+    background: var(--palette-offwhite-200);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.note-content pre {
+    background: var(--palette-offwhite-200);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.note-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.note-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.note-content a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.note-content a:hover {
+    text-decoration: underline;
+}
