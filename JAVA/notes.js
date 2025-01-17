@@ -4,7 +4,7 @@ let notesData = [];
 // Fetch notes data
 async function fetchNotes() {
     try {
-        const response = await fetch('/json/notes.json');
+        const response = await fetch('/JSON/notes.json');
         const data = await response.json();
         notesData = data.notes; // Store the notes data
         return data.notes;
