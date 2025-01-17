@@ -165,8 +165,11 @@ nav a {
   }
   
   .profile {
-      flex-direction: nowrap;
-      align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
   }
   
   .block-quote {
@@ -199,8 +202,8 @@ nav a {
   }
   
   .profile-photo {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       margin-bottom: 10px;
   }
   .social-links {
@@ -234,11 +237,11 @@ nav a {
 
   /* Custom layout for the profile section */
   .profile {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      margin: 2rem 0;
-      align-items: start;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   /* Enhanced profile photo */

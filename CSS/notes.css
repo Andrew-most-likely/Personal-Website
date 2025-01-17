@@ -115,7 +115,7 @@
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    margin: 0 auto;
+    margin: 5px;
 }
 
 /* Note Content Styling */
