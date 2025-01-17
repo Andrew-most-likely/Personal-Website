@@ -1,154 +1,318 @@
 :root {
-    --palette-offgray-100: #e2e5e9;
-    --palette-offgray-200: #c0c5ce;
-    --palette-offgray-300: #9da5b3;
-    --palette-offgray-400: #7b8699;
-    --palette-offgray-500: #4b5361;
-    --palette-offgray-600: #1f293c;
-    --palette-offwhite-100: #fcfcfa;
-    --palette-offwhite-200: #dbd8d3;
-    --palette-offwhite-300: #d0cabc;
-    --palette-offwhite-400: #b6b39f;
-    --palette-offwhite-500: #9c9686;
-    --palette-offwhite-600: #5a574e;
-  }
-  
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    border: none;
-    background-color: var(--palette-offwhite-100);
-    color: var(--palette-offgray-600);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --palette-offgray-100: #e2e5e9;
+  --palette-offgray-200: #c0c5ce;
+  --palette-offgray-300: #9da5b3;
+  --palette-offgray-400: #7b8699;
+  --palette-offgray-500: #4b5361;
+  --palette-offgray-600: #1f293c;
+  --palette-offwhite-100: #fcfcfa;
+  --palette-offwhite-200: #dbd8d3;
+  --palette-offwhite-300: #d0cabc;
+  --palette-offwhite-400: #b6b39f;
+  --palette-offwhite-500: #9c9686;
+  --palette-offwhite-600: #5a574e;
+}
 
-  }
-  
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  border: none;
+  background-color: var(--palette-offwhite-100);
+  color: var(--palette-offgray-600);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  padding: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: var(--palette-offwhite-100);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--palette-offgray-600);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.column-page {
+  margin-top: 60px;
+  padding-bottom: 2rem;
+}
+
+.title-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-photo {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.profile-bio-title {
+  text-align: center; 
+  margin-left: 5px; 
+  line-height: 1;
+}
+.profile-bio {
+  text-align: left; 
+  margin-left: 10px; 
+  line-height: 1;
+}
+
+.block-quote {
+  background-color: #fff8eb80;
+  border: 3px solid #000000;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+  height: 150px;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.bio {
+  background-color: #fff8eb80;
+  border: 3px solid #000000;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.resume {
+  width: 100%;
+  max-height: 950px;
+  object-fit: contain;
+}
+
+.resume img {
+  max-width: 100%;
+  height: auto;
+}
+
+.platforms {
+  max-width: 40px;
+  margin-right: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
   .container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-
+      padding: 0.5rem;
   }
   
+  .profile {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .block-quote {
+      margin-left: 0;
+  }
+  
+  .profile-photo {
+      margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
   nav {
-    background-color: var(--palette-offwhite-100);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 500;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 2rem;
+      padding: 0.25rem;
   }
   
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
+      gap: 0.5rem;
   }
   
-  nav a {
-    color: var(--palette-offgray-600);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  nav a:hover {
-    color: var(--palette-offgray-400);
-  }
-  
-  h1, h2, h3, h5 {
-    color: var(--palette-offgray-600);
-    margin-bottom: 1.5rem;
-  }
-  
-  .section {
-    margin-bottom: 4rem;
-  }
-
-  .title-section {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* Vertically centers the item */
-    align-items: left;      /* Horizontally centers the item */
-  }
-
-  .profile-photo {
-    border-radius: 4px;
-    object-fit: cover;
-    width: 150px;
-    height: 150px;
-  }
-
-  .block-quote {
-    background-color: #fff8eb80;
-    border: 3px solid #000000;
-    margin-left: 10px;
-    border-radius: 4px;
-    width: 300px;
-    height: 144.7px;
-    text-align: center;
-  }
-  
-  .platforms {
-    max-width: 40px;
-    margin-right: 10px;
-  }
-  .profile {
-    display: flex;
-  }
-
-  .social-links {
-    position: flex;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
-  }
-
-  .resume {
-    height: 950px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
+  .block-quote,
   .bio {
-    background-color: #fff8eb80;
-    border: 3px solid #000000;
-    border-radius: 4px;
-    width: 250px;
-    height: 100px;
-    text-align: center;
-    margin-top: 10px;
-    width:100%
+      font-size: 0.9rem;
   }
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    font-family: Inconsolata, monospace;
-    line-height: 1.6em;
+  
+  .profile-photo {
+      width: 120px;
+      height: 120px;
+  }
 }
 
-.profile-bio {
-  margin: 0;
-  text-align: left;
+/* Print styles */
+@media print {
+  nav {
+      display: none;
+  }
+  
+  .column-page {
+      margin-top: 0;
+  }
 }
-.column-page {
-  margin-top: 50px;
-  padding-bottom: 50px;
-  display: grid;
+
+/* Base styles remain the same as before until the media query */
+
+/* Desktop-specific styles (minimum width of 1024px) */
+@media screen and (min-width: 1024px) {
+  .container {
+      padding: 2rem;
+      max-width: 800px;  /* Increased max-width for larger screens */
+  }
+
+  /* Custom layout for the profile section */
+  .profile {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+      align-items: start;
+  }
+
+  /* Enhanced profile photo */
+  .profile-photo {
+      width: 150px;
+      height: 150px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-photo:hover {
+      transform: scale(1.05);
+  }
+
+  /* Styled block quote */
+  .block-quote {
+      background: linear-gradient(145deg, #fff8eb80, #fff);
+      border: 3px solid #000000;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+  }
+
+  .block-quote:hover {
+      transform: translateY(-5px);
+      box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced bio section */
+  .bio {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: linear-gradient(145deg, #fff8eb80, #fff);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+  }
+
+  .bio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Enhanced navigation */
+  nav {
+      padding: 1rem 4rem;
+      background: rgba(252, 252, 250, 0.95);
+      backdrop-filter: blur(10px);
+  }
+
+  nav ul {
+      gap: 3rem;
+  }
+
+  nav a {
+      position: relative;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+  }
+
+  nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--palette-offgray-400);
+      transition: width 0.3s ease;
+  }
+
+  nav a:hover::after {
+      width: 100%;
+  }
+
+  /* Resume section enhancement */
+  .resume {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+      width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: var(--palette-offwhite-100);
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: var(--palette-offgray-300);
+      border-radius: 6px;
+      border: 3px solid var(--palette-offwhite-100);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: var(--palette-offgray-400);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  a, button, .profile-photo, .block-quote, .bio {
+      transition: all 0.3s ease;
+  }
 }
