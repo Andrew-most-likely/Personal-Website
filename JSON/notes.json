@@ -4,9 +4,10 @@
         "id": 1,
         "title": "Andrews thoughts",
         "date": "2025 01 18",
-        "preview": "he doest know what his next thought will be but well keep you updated...",
-        "content": "thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...thinking...",
-        "tags": ["thinking..."],
+        "preview": "My first note...",
+        "content": 
+        "My first note, if you're reading this then welcome this website, was made by me using a plethra of sorces. like most I am a highly proficient stack over flow copy and paster but I would like to think I know my way around an IDE; and most langueges pertaining to web design. One exception to this would be Java and Json, although my current employer JWU has employed me to develop there IT student portal which has been very informative. an example of this would be using Json and Java in conjuntion to create a sort of database I am currenty using this to hold my notes. Then I parse and format the data using Java populate the HTML and format using CSS. Dont worry the schools database is not built this way im not absolutly insane. But it is a handy trick for when you dont want or have the abuility to set up a sql database. Anyway thats all for now hopefully soon ill have some more revelations to share.",
+        "tags": ["Beggining","new","intro"],
         "lastUpdated": "2025 01 18"
       }
     ]

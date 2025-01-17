@@ -75,10 +75,8 @@ nav a {
 
 .profile {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .profile-photo {
@@ -105,7 +103,7 @@ nav a {
   border: 3px solid #000000;
   border-radius: 4px;
   width: 100%;
-  max-width: 100%;
+  max-width: 300px;
   height: 150px;
   min-height: 120px;
   box-sizing: border-box;
@@ -240,8 +238,6 @@ nav a {
     display: flex;
     flex-wrap: nowrap;
     gap: 1rem;
-    justify-content: center;
-    align-items: flex-start;
   }
 
   /* Enhanced profile photo */
