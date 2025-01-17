@@ -78,8 +78,8 @@
     margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
-  justify-content: center;  /* Vertically centers the item */
-  align-items: center;      /* Horizontally centers the item */
+    justify-content: center;  /* Vertically centers the item */
+    align-items: left;      /* Horizontally centers the item */
   }
 
   .profile-photo {
@@ -92,10 +92,9 @@
   .block-quote {
     background-color: #fff8eb80;
     border: 3px solid #000000;
-
     margin-left: 10px;
     border-radius: 4px;
-    width: 250px;
+    width: 300px;
     height: 144.7px;
     text-align: center;
   }
@@ -108,10 +107,6 @@
     display: flex;
   }
 
-  .p {
-    line-height: normal;
-  }
-
   .social-links {
     position: flex;
   bottom: 0;
@@ -122,4 +117,38 @@
 
   .resume {
     height: 950px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
   }
+
+  .bio {
+    background-color: #fff8eb80;
+    border: 3px solid #000000;
+    border-radius: 4px;
+    width: 250px;
+    height: 100px;
+    text-align: center;
+    margin-top: 10px;
+    width:100%
+  }
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-family: Inconsolata, monospace;
+    line-height: 1.6em;
+}
+
+.profile-bio {
+  margin: 0;
+  text-align: left;
+}
+.column-page {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  display: grid;
+}
