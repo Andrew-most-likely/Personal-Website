@@ -157,6 +157,7 @@ nav a {
   line-height: 2;
 }
 
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .container {
@@ -164,7 +165,7 @@ nav a {
   }
   
   .profile {
-      flex-direction: column;
+      flex-direction: nowrap;
       align-items: center;
   }
   
@@ -177,7 +178,10 @@ nav a {
   }
   .social-links {
     justify-content: center;
-}
+  }
+  .BIG-OL-TITLE {
+    font-size: 18.5px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -197,10 +201,15 @@ nav a {
   .profile-photo {
       width: 120px;
       height: 120px;
+      margin-bottom: 10px;
   }
   .social-links {
     justify-content: center;
-}
+  }
+  .BIG-OL-TITLE {
+    text-align-last: center;
+    font-size: 14px;
+  }
 }
 
 /* Print styles */
