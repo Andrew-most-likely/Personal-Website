@@ -121,6 +121,7 @@ nav a {
   height: auto;
   min-height: 100px;
   box-sizing: border-box;
+  display: flex;
 }
 
 .resume {
@@ -137,6 +138,23 @@ nav a {
 .platforms {
   max-width: 40px;
   margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.bio-text {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18.5px;
+  line-height: 2;
 }
 
 /* Media Queries */
@@ -239,7 +257,6 @@ nav a {
   .bio {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 2rem;
       background: linear-gradient(145deg, #fff8eb80, #fff);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -253,7 +270,7 @@ nav a {
 
   /* Enhanced navigation */
   nav {
-      padding: 1rem 4rem;
+      padding: 1rem;
       background: rgba(252, 252, 250, 0.95);
       backdrop-filter: blur(10px);
   }
