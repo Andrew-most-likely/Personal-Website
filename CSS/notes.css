@@ -9,6 +9,7 @@
 .note-card {
     background: var(--palette-offwhite-100);
     border: 1px solid var(--palette-offgray-200);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -115,7 +116,9 @@
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    margin: 5px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom:20px;
 }
 
 /* Note Content Styling */
