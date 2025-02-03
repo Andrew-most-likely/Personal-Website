@@ -9,21 +9,21 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://cappel.li/about</loc>
+    <loc>https://cappel.li/index.html</loc>
     <lastmod>2025-02-03</lastmod>
     <priority>0.8</priority>
   </url>
   
   <!-- Projects Page -->
   <url>
-    <loc>https://cappel.li/projects</loc>
+    <loc>https://cappel.li/HTML/projects.html</loc>
     <lastmod>2025-02-03</lastmod>
     <priority>0.8</priority>
   </url>
   
   <!-- Notes Page -->
   <url>
-    <loc>https://cappel.li/notes</loc>
+    <loc>https://cappel.li/HTML/notes.html</loc>
     <lastmod>2025-02-03</lastmod>
     <priority>0.7</priority>
   </url>
@@ -35,6 +35,4 @@
     <priority>0.6</priority>
   </url>
   
-  <!-- LinkedIn and GitHub -->
-  <!-- External links are not required in your sitemap, so they’re not included -->
 </urlset>
