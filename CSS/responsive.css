@@ -1,0 +1,192 @@
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .profile {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    .block-quote {
+        margin-left: 0;
+    }
+    
+    .profile-photo {
+        margin: 0 auto;
+    }
+    .social-links {
+      justify-content: center;
+    }
+    .BIG-OL-TITLE {
+      font-size: 18.5px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    nav {
+        padding: 0.25rem;
+    }
+    
+    nav ul {
+        gap: 0.5rem;
+    }
+    
+    .block-quote,
+    .bio {
+        font-size: 0.9rem;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .social-links {
+      justify-content: center;
+    }
+    .BIG-OL-TITLE {
+      text-align-last: center;
+      font-size: 14px;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    nav {
+        display: none;
+    }
+    
+    .column-page {
+        margin-top: 0;
+    }
+  }
+  
+  /* Base styles remain the same as before until the media query */
+  
+  /* Desktop-specific styles (minimum width of 1024px) */
+  @media screen and (min-width: 1024px) {
+    .container {
+        padding: 2rem;
+        max-width: 800px;  /* Increased max-width for larger screens */
+    }
+  
+    /* Custom layout for the profile section */
+    .profile {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+  
+    /* Enhanced profile photo */
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .profile-photo:hover {
+        transform: scale(1.05);
+    }
+  
+    /* Styled block quote */
+    .block-quote {
+        background: linear-gradient(145deg, #fff8eb80, #fff);
+        border: 3px solid #000000;
+        border-radius: 8px;
+        width: 400px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+  
+    .block-quote:hover {
+        transform: translateY(-5px);
+        box-shadow: 5px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  
+    /* Enhanced bio section */
+    .bio {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: linear-gradient(145deg, #fff8eb80, #fff);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+  
+    .bio:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  
+    /* Enhanced navigation */
+    nav {
+        padding: 1rem;
+        background: rgba(252, 252, 250, 0.95);
+        backdrop-filter: blur(10px);
+    }
+  
+    nav ul {
+        gap: 3rem;
+    }
+  
+    nav a {
+        position: relative;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+    }
+  
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--palette-offgray-400);
+        transition: width 0.3s ease;
+    }
+  
+    nav a:hover::after {
+        width: 100%;
+    }
+  
+    /* Resume section enhancement */
+    .resume {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+  
+    ::-webkit-scrollbar-track {
+        background: var(--palette-offwhite-100);
+    }
+  
+    ::-webkit-scrollbar-thumb {
+        background: var(--palette-offgray-300);
+        border-radius: 6px;
+        border: 3px solid var(--palette-offwhite-100);
+    }
+  
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--palette-offgray-400);
+    }
+  
+    /* Smooth transitions for all interactive elements */
+    a, button, .profile-photo, .block-quote, .bio {
+        transition: all 0.3s ease;
+    }
+  }
