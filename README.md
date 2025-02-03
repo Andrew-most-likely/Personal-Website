@@ -21,9 +21,8 @@ The repository is organized as follows:
 │   └── `responsive.css` 📱 Responsive design for various screen sizes  
 │
 ├── `js/` ⚙️ JavaScript files  
-│   ├── `notes.js` 💡 Notes functionality scripts  
-│   ├── `darkMode.js` 🌙 Dark mode toggle functionality   Coming soon
-│   └── `navigation.js` 🚀 Navigation bar scripts         Coming soon
+│   ├── `notes.js` 💡 Notes functionality 
+│   └── `project.js` 🛠️ Project functionality scripts | Coming soon
 │
 ├── `json`/  🗃️ Json files
 │   └── `notes.json` 📝 hold notes in json to populate site
