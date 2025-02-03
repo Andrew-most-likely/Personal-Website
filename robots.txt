@@ -1,0 +1,5 @@
+# Allow all web crawlers to access the site
+User-agent: *
+
+# Point to the XML sitemap for indexing
+Sitemap: https://cappel.li/sitemap.xml
