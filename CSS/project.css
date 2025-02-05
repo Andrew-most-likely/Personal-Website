@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+}
+
+.project-column {
+  flex: 1 1 30%; /* Adjusts each item to be 30% width */
+  box-sizing: border-box;
+}
+
+.project-column img, .project-column video {
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.5s ease;
+}
+
+.project-column:hover img, .project-column:hover video {
+  transform: scale(1.05);
+}
+
+.project-label {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+@media (max-width: 1024px) {
+  .project-column {
+    flex: 1 1 45%; /* Two columns on medium screens */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-column {
+    flex: 1 1 100%; /* One column on small screens */
+    max-width: 100%;
+  }
+}
