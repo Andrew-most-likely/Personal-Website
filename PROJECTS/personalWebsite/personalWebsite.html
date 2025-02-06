@@ -40,7 +40,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../../index">About</a></li>
+            <li><a href="../../index.html">About</a></li>
             <li><a href="../../HTML/projects.html">Projects</a></li>
             <li><a href="../../HTML/notes.html">Notes</a></li>
         </ul>
@@ -55,7 +55,8 @@
 
             <section class="section">
                 <p>This guide aims to provide a clear and insightful overview of creating and hosting your own personal
-                    website.</p>
+                    website. A condition of this tutorial is the use of VSC or visual studio code. Adittionally the use
+                    of a domain name and cloudflare is optional.</p>
             </section>
 
             <section id="ProjectSection" class="section projects-grid">
@@ -64,17 +65,169 @@
 
                 <div class="project-nav">
                     <ul>
-                            <li><a target="_blank" href="https://github.com/">GitHub Account</a></li>
-                            <li><a target="_blank" href="https://www.cloudflare.com/">Cloudflare Account</a></li>
-                            <li><a target="_blank" href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE of your choice</a></li>
-                            <li><a target="_blank" href="https://git-scm.com/">Git</a></li>
+                        <li><a target="_blank" href="https://github.com/">GitHub Account</a></li>
+                        <li><a target="_blank" href="https://www.cloudflare.com/">Cloudflare Account</a></li>
+                        <li><a target="_blank" href="https://www.namecheap.com/">Domain Registrar</a></li>
+                        <li><a target="_blank"
+                                href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE of your
+                                choice</a></li>
+                        <li><a target="_blank" href="https://git-scm.com/">Git</a></li>
                     </ul>
                 </div>
 
+                <h1>Step 1: Create a GitHub Repository</h1>
+                <p>
+                <ol>
+                    <li>Log in to your GitHub account.</li>
+                    <li>Click the "+" icon in the top right corner of the page and select "New repository."</li>
+                    <li>Enter a name for your repository, such as "personal-website."</li>
+                    <li>Select the readme box to add a ReadMe to your repository.</li>
+                    <li>Make sure to set your repository to public.</li>
+                    <li>Click "Create repository."</li>
+                </ol>
+                </p>
+
+                <h1>Step 2: Install git</h1>
+                <p>
+                <ol>
+                    <li>Once you've installed run Git Bash</li>
+                    <li>Run the following commands:
+                        <ul>
+                            <li>git config --global user.name "Your Name"</li>
+                            <li>git config --global user.email "Your Email"</li>
+                            <li>Close Git Bash</li>
+                </ol>
+                </p>
+                <h1>Step 3: Clone your repository</h1>
+                <p>
+                <ol>
+                    <li>Open Your IDE (were using VSC)</li>
+                    <li>Slect the Accounts icon in the bottom left<br> and sign in to your github account </li>
+                    <li>Press Ctlr + Shift + E or select the page icon</li>
+                    <li>Click the "Clone Repository" button</li>
+                    <ul>
+                        <li>Either Enter the URL of your repository <br>
+                            Select your repository in the drop down</li>
+                        <li>Choose a location to save your repository</li>
+                        <li>Click "Clone"</li>
+                    </ul>
+                </ol>
+                </p>
+                <h1>Step 4: Create your website</h1>
+                <p>
+                <ol>
+                    <li>Right click on your repository in the explorer</li>
+                    <li>Select "New File"</li>
+                    <li>Enter "index.html" as the file name</li>
+                    <li>Enter the following code into your file:
+                        <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;My Personal Website&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Welcome to My Personal Website!&lt;/h1&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+                    </li>
+                </ol>
+                </p>
+                <h1>Step 5: Push your changes</h1>
+                <p>
+                <ol>
+                    <li>press Ctrl + Shift + G or select Sorce Control</li>
+                    <li>Enter a commit message</li>
+                    <li>Press the Plus Icon in the changes list</li>
+                    <li>Press the commit button to commit your changes</li>
+                    <li>Finally Sync Chnages</li>
+                </ol>
+                </p>
+                <h1>Step 6: Setup Github Pages</h1>
+                <p>
+                <ol>
+                    <li>Go to your repository on GitHub</li>
+                    <li>Click on the "Settings" tab</li>
+                    <li>Select "GitHub Pages" in the left side actions list called "Code and automation"</li>
+                    <li>Under "Source" select "main" or "master" branch</li>
+                    <li>Click "Save"</li>
+                    <li>After a few minutes, your website will be live at
+                        https://yourusername.github.io/yourrepositoryname</li>
+
+                </ol>
+                </p>
+                <h1>Step 7: Optional - Purchase a Domain Name</h1>
+                <p>
+                <ol>
+                    <li>Go to a domain registrar such as Namecheap</li>
+                    <li>Search for your desired domain name</li>
+                    <li>Click "Add to Cart" and complete the purchase process</li>
+                    <li>Go to your domain registrar's DNS settings</li>
+                    <li>under name server select custom dns</li>
+                    <li>Enter the nameservers provided by your hosting provider</li>
+                    <li>Wait for the DNS changes to propagate (this can take up to 48 hours)</li>
+                    <li>Your website will now be live at your custom domain name</li>
+                </ol>
+                <h1>Step 8: Optional - Setup a Custom Domain with Cloudflare</h1>
+                <p>
+                <ol>
+                    <li>Go to Cloudflare and create an account</li>
+                    <li>Click on "Add a site" and enter your domain name</li>
+                    <li>Click "Add site"</li>
+                    <li>Cloudflare will scan your DNS records</li>
+                    <li>Click "Continue"</li>
+                    <li>Choose a plan (Free is fine for most users)</li>
+                    <li>Click "Continue"</li>
+                    <li>Cloudflare will provide you with two nameservers</li>
+                    <li>Go to your domain registrar and update your nameservers to the ones provided by Cloudflare</li>
+                    <li>Go back to Cloudflare and click "Done"</li>
+                </ol>
+                </p>
+                <h1>Step 9: Optional - Finishing Your Custom Domain Name</h1>
+                <p>
+                <ol>
+
+                    <li>Go to Cloudflare and click on the "DNS" tab</li>
+                    <li>Click "Add record"</li>
+                    <li>Create an A record for all of the following IP addresses</li>
+                    <li>make sure type is A Record name is "@" and ip is the one of the following github pages IP's</li>
+                    <ul>
+                        <li>185.199.111.153</li>
+                        <li>185.199.110.153</li>
+                        <li>185.199.109.153</li>
+                        <li>185.199.108.153</li>
+                    </ul>
+                    <li>Click "Save"</li>
+                    <li>Click "Add record"</li>
+                    <li>make sure type is CNAM Name required is "www" is your custome domain</li>
+                    <li>Click "Save"</li>
+                    <li>Go Back into the Github Pages settings find "Custom domain"</li>
+                    <li>Enter your custom domain name</li>
+                    <li>Click "Save"</li>
+                    <li>Note that it will not work yet</li>
+                    <li>Wait for the DNS changes to propagate (this can take up to 48 hours)</li>
+                </ol>
+                </p>
             </section>
         </div>
     </div>
     <script src=""></script>
+    <div class="footer-div">
+        <ul class="footer-ul">
+          <li  class="footer-li"><a target="_blank" class="footer-a" href="mailto:AndrewCappelli13@gmail.com">Email</a></li>
+          <li class="footer-li"><a target="_blank" class="footer-a" href="https://www.linkedin.com/in/andrew-cappelli/">Linked-In</a></li>
+          <li class="footer-li"><a target="_blank" class="footer-a" href="https://github.com/Andrew-most-likely/">Github</a></li>
+
+          <li class="footer-li">
+            <p>👋</p>
+          </li>
+        </ul>
+      </div>
 </body>
 
 </html>
