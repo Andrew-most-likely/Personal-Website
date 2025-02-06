@@ -27,7 +27,6 @@ body, html {
 
 .container {
   min-height: 100vh;
-  padding: 1rem;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -157,7 +156,6 @@ nav a {
 }
 
 footer {
-  
   text-align: center;
   padding: 1rem;
   background-color: var(--palette-offwhite-100);
@@ -166,7 +164,6 @@ footer {
 }
 
 .footer-ul {
-
   display: inline-grid;
   grid-auto-flow: row;
   grid-gap: 24px;
@@ -200,13 +197,9 @@ footer {
 
 .footer-li:hover ~ li p {
   animation: wave-animation 0.3s infinite;
-  
 }
 
-/* below is just for demo styling */
-
 .footer-div {
-
   bottom: 0;
   width: 100%;
   display: flex;
@@ -229,4 +222,3 @@ footer {
     transform: rotate(-15deg);
   }
 }
-

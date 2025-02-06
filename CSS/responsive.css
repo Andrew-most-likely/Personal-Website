@@ -29,12 +29,28 @@
   }
   
   @media screen and (max-width: 480px) {
+    P {
+        font-size: 0.9rem;
+        overflow:hidden;
+    }
+    .container {
+        padding: 0.5rem;
+        width: 100%;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+    }
+    .project-nav {
+        backdrop-filter: none;
+    }
     nav {
+        width: -moz-fit-content;
         padding: 0.25rem;
     }
     
     nav ul {
         gap: 0.5rem;
+        
     }
     
     .block-quote,
