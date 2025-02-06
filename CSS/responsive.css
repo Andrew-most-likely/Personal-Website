@@ -190,3 +190,18 @@
         transition: all 0.3s ease;
     }
   }
+
+  @media (max-width: 1024px) {
+    .project-column {
+      flex: 1 1 45%; /* Two columns on medium screens */
+      max-width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .project-column {
+      flex: 1 1 100%; /* One column on small screens */
+      max-width: 100%;
+    }
+  }
+  

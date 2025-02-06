@@ -2,7 +2,8 @@
 [
   {
     "name": "Project Website",
-    "video": "../PROJECTS/personalWebsite/Personalwebsite.mp4",
-    "poster": "../PROJECTS/personalWebsite/Personalwebsite.png"
+    "video": "../PROJECTS/personalWebsite/personalWebsite.mp4",
+    "poster": "../PROJECTS/personalWebsite/personalWebsite.png",
+    "link": "https://cappel.li/PROJECTS/personalWebsite/personalWebsite.html"
   }
 ]

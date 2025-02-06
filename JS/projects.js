@@ -9,9 +9,11 @@ function loadProjects() {
       projects.forEach(project => {
         projectHTML += `
           <div class="project-column">
-            <video preload="none" loop muted poster="${project.poster}" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+          <a href="${project.link}" target="_blank">
+            <video  preload="none" loop muted poster="${project.poster}" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
               <source src="${project.video}" type="video/mp4">Your browser does not support the video tag.
             </video>
+            </a>
             <div class="project-label">${project.name}</div>
           </div>
         `;
