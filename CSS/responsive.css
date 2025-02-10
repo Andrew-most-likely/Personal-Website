@@ -144,7 +144,6 @@
     /* Enhanced navigation */
     nav {
         padding: 1rem;
-        background: rgba(252, 252, 250, 0.95);
         backdrop-filter: blur(10px);
     }
   
