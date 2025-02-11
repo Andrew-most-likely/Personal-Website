@@ -23,6 +23,8 @@ body, html {
   color: var(--palette-offgray-600);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -86,6 +88,8 @@ nav a {
   height: 150px;
   flex-shrink: 0;
 }
+
+
 
 .profile-bio-title {
   text-align: center; 
