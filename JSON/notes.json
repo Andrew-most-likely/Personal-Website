@@ -9,6 +9,15 @@
         "My first note, if you're reading this then welcome! This website was made by me using many sources and tools like VSC, CloudFlare and Vercel. Like most, I am a highly proficient stack overflow copy and paster but I would like to think I know my way around an IDE, and most languages pertaining to web design. One exception to this would be Java and JSON, although my current employer JWU has employed me to develop their IT student portal which has been very informative. An example of this would be using JSON and Java in conjunction to create a sort of database I am currently using this to hold my notes. Then I parse and format the data using Java populate the HTML and format it using CSS. Don't worry the school's database is not built this way I'm not entirely insane. But it is a handy trick for when you don't want to set up an SQL database or can't do so. Anyway, that's all for now, hopefully soon I'll have some more revelations to share.",
         "tags": ["Beginning","new","intro"],
         "lastUpdated": "2025 01 18"
+      },
+      {
+        "id": 2,
+        "title": "Website Flow",
+        "date": "2025 02 11",
+        "preview": "Do users care about organization...",
+        "content": "Do Users Care About Organization? Recently, I've been questioning whether users really care about organization in design. At first, it seems like an obvious 'yes.' However, I started wondering if what we often call 'good design' is just aesthetically pleasing, or if it actually improves user efficiency. This thought came up because one of the websites I'm maintaining was approved to become the production model, which means it's now under the scrutiny of a wider audience. This includes both technically savvy individuals and those less familiar with the details of design. While most feedback is benign, I've occasionally gotten questions like, 'Does this really need to be a separate page?' More often than not, the answer is 'no,' but it made me realize how frequently I've separated content into different pages simply because it's the traditional approach, rather than considering if it's the most efficient design for the user.",
+        "tags": ["UX","design","website"],
+        "lastUpdated": "2025 02 11"
       }
     ]
   }
