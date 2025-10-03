@@ -5,5 +5,10 @@
     "video": "../PROJECTS/personalWebsite/Personalwebsite.mp4",
     "poster": "../PROJECTS/personalWebsite/Personalwebsite.png",
     "link": "../PROJECTS/personalWebsite/personalWebsite.html"
+  },
+  {
+    "name": "Cyber Awareness",
+    "poster": "../PROJECTS/CyberAwareness/Cyber_Awarenes.png",
+    "link": "https://andrew-most-likely.github.io/Cybersecurity-Awareness/"
   }
 ]
