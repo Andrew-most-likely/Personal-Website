@@ -18,6 +18,15 @@
         "content": "Do Users Care About Organization? Recently, I've been questioning whether users really care about organization in design. At first, it seems like an obvious 'yes.' However, I started wondering if what we often call 'good design' is just aesthetically pleasing, or if it actually improves user efficiency. This thought came up because one of the websites I'm maintaining was approved to become the production model, which means it's now under the scrutiny of a wider audience. This includes both technically savvy individuals and those less familiar with the details of design. While most feedback is benign, I've occasionally gotten questions like, 'Does this really need to be a separate page?' More often than not, the answer is 'no,' but it made me realize how frequently I've separated content into different pages simply because it's the traditional approach, rather than considering if it's the most efficient design for the user.",
         "tags": ["UX","design","website"],
         "lastUpdated": "2025 02 11"
+      },
+       {
+        "id": 3,
+        "title": "New Projects",
+        "date": "2025 09 22",
+        "preview": "Hopefully I'll have a new project...",
+        "content": "Hopefully I'll have a new project out soon focusing on Full stack development. But working on personal projects has been dificult latly due to the pressures of trying to find an internship and job placement. In todays job market there is really nothing in the way of easy to find employment even unpayed for that matter. recently I have applied to atleast 10 so far and only one got back to me with interest so we will see how that goes. in the mean time when I have free space I will hopefully be more active in posting project updates and work.",
+        "tags": ["Internships", "Projects"],
+        "lastUpdated": "2025 09 22"
       }
     ]
   }

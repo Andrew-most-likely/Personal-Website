@@ -89,6 +89,9 @@ nav a {
   flex-shrink: 0;
 }
 
+.profile-photo {
+    transition: opacity 0.5s ease-in-out;
+}
 
 
 .profile-bio-title {
