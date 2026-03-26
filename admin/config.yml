@@ -1,17 +1,18 @@
 backend:
-  name: git-gateway
+  name: github
   repo: Andrew-most-likely/Personal-Website
   branch: main
+  auth_type: pkce
+  app_id: REPLACE_WITH_YOUR_GITHUB_OAUTH_APP_CLIENT_ID
 
-# Decap CMS uses Netlify Identity for auth.
 # Setup steps (one-time):
-#   1. Create a free Netlify account at netlify.com
-#   2. "New site" → "Import an existing project" → connect your GitHub repo
-#   3. Site Settings → Identity → Enable Identity
-#   4. Identity → Services → Enable Git Gateway
-#   5. Identity → Registration → Set to "Invite only"
-#   6. Invite yourself under Identity → Users
-#   7. Visit https://cappel.li/admin/ and log in
+#   1. Go to github.com → Settings → Developer settings → OAuth Apps → New OAuth App
+#   2. Application name: cappel.li admin
+#   3. Homepage URL: https://cappel.li
+#   4. Authorization callback URL: https://cappel.li/admin/
+#   5. Register the app, copy the Client ID
+#   6. Replace REPLACE_WITH_YOUR_GITHUB_OAUTH_APP_CLIENT_ID above with that Client ID
+#   7. Push to GitHub, then visit https://cappel.li/admin/ and sign in with GitHub
 
 media_folder: Personal-Website/ASSETS/IMAGES
 public_folder: /ASSETS/IMAGES
