@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  repo: Andrew-most-likely/Personal-Website
+  branch: main
+
+# Decap CMS uses Netlify Identity for auth.
+# Setup steps (one-time):
+#   1. Create a free Netlify account at netlify.com
+#   2. "New site" → "Import an existing project" → connect your GitHub repo
+#   3. Site Settings → Identity → Enable Identity
+#   4. Identity → Services → Enable Git Gateway
+#   5. Identity → Registration → Set to "Invite only"
+#   6. Invite yourself under Identity → Users
+#   7. Visit https://cappel.li/admin/ and log in
+
+media_folder: Personal-Website/ASSETS/IMAGES
+public_folder: /ASSETS/IMAGES
+
+collections:
+  - name: notes
+    label: Notes
+    files:
+      - name: notes_list
+        label: Notes List
+        file: Personal-Website/JSON/notes.json
+        fields:
+          - name: notes
+            label: Notes
+            label_singular: Note
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Date
+                name: date
+                widget: datetime
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+              - label: Preview
+                name: preview
+                widget: string
+                hint: Short teaser shown on the notes listing page
+              - label: Content
+                name: content
+                widget: text
+                hint: Full note body (plain text, no markdown)
+              - label: Tags
+                name: tags
+                widget: list
+                allow_add: true
+                field:
+                  label: Tag
+                  name: tag
+                  widget: string
+              - label: Last Updated
+                name: lastUpdated
+                widget: datetime
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false

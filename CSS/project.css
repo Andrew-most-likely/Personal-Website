@@ -1,83 +1,175 @@
+.projects-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .project-column {
-  flex: 1 1 30%; /* Adjusts each item to be 30% width */
+  flex: 1 1 30%;
   box-sizing: border-box;
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--c-surface);
+  transition: border-color 0.2s;
 }
 
-.project-column img, .project-column video {
+.project-column:hover {
+  border-color: var(--c-border-hi);
+}
+
+.project-column img,
+.project-column video {
   width: 100%;
-  border-radius: 4px;
-  transition: transform 0.5s ease;
+  display: block;
+  transition: opacity 0.3s;
 }
 
-.project-column:hover img, .project-column:hover video {
-  transform: scale(1.05);
+.project-column:hover img,
+.project-column:hover video {
+  opacity: 0.85;
 }
 
 .project-label {
-  font-size: 1.8rem;
-  text-align: center;
-  padding-top: 0.5em;
-}
-
-.project-nav {
-  display: flex;
-  justify-content: center;
-  background-color: var(--palette-offwhite-100);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  z-index: 500;
-  left: 0;
-  width: 700px;
-  padding: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
-.project-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.project-nav a {
-  color: var(--palette-offgray-600);
-  text-decoration: none;
+  font-size: 0.82rem;
   font-weight: 500;
-  padding: 0.5rem;
+  color: var(--c-body);
+  text-align: center;
+  padding: 0.6em 0.75em;
+  line-height: 1.4;
+  border-top: 1px solid var(--c-border);
+  background: var(--c-surface);
 }
 
-/* Enhanced navigation */
-.project-nav {
-  padding: 1rem;
-
-  backdrop-filter: blur(10px);
-}
-
-.project-nav a {
-  position: relative;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
-}
-
-.project-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--palette-offgray-400);
-  transition: width 0.3s ease;
-}
-
-.project-nav a:hover::after {
-  width: 100%;
+.project-label::before {
+  content: '$ ';
+  color: var(--accent);
+  font-family: monospace;
 }
 
 pre {
   display: flex;
   justify-content: center;
+}
+
+/* ── GitHub repo cards ────────────────────────────────────── */
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.repo-card:hover {
+  border-color: var(--c-border-hi);
+  background: var(--c-surface-2);
+}
+
+.repo-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.repo-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--c-heading);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-name svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2;
+  opacity: 0.5;
+}
+
+.repo-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--c-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.repo-description {
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-no-desc {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--c-muted);
+}
+
+.repo-stat svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+.repo-updated {
+  font-size: 0.7rem;
+  color: var(--c-muted);
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+.repo-loading {
+  color: var(--c-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 1rem 0;
 }

@@ -1,3 +1,15 @@
+// Scroll fade-in
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
+
 const profilePhoto = document.getElementById("profilePhoto");
 
 const photos = [

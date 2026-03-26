@@ -1,78 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Meta Tags for SEO -->
-        <meta name="description" content="Explore Andrew Cappelli's personal projects, including coding challenges, software development work, and problem-solving experiences. See his journey in the tech world.">
-        <meta name="keywords" content="Andrew Cappelli, Projects, Coding, Software Development, Tech, Programming, GitHub, Web Development, Cyber Security">
-        <meta name="author" content="Andrew Cappelli">
-        
-        <!-- Open Graph Meta Tags for Social Media Sharing -->
-        <meta property="og:title" content="Projects | Andrew Cappelli">
-        <meta property="og:description" content="Discover Andrew Cappelli's projects including coding challenges, software development work, and technical problem-solving. View his contributions to the tech world.">
-        <meta property="og:image" content="../ASSETS/IMAGES/profile-photo.webp">
-        <meta property="og:url" content="https://cappel.li/HTML/projects.html">
-        <meta property="og:type" content="website">
-        
-        <!-- Twitter Card Meta Tags for Twitter Sharing -->
-        <meta name="twitter:title" content="Projects | Andrew Cappelli">
-        <meta name="twitter:description" content="Check out Andrew Cappelli's personal projects showcasing his skills in software development, coding challenges, and problem-solving in the tech field.">
-        <meta name="twitter:image" content="../ASSETS/IMAGES/profile-photo.webp">
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <!-- Title Tag -->
-        <title>Projects | Andrew Cappelli</title>
-        
-        <!-- External Stylesheet Link -->
-        <link rel="stylesheet" href="../CSS/main.css">
-        <link rel="stylesheet" href="../CSS/responsive.css">
-        <link rel="stylesheet" href="../CSS/project.css">
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-            
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Projects by Andrew Cappelli — software, security, and web development work.">
+    <meta name="keywords" content="Andrew Cappelli, Projects, Cyber Security, Software Development, Web Development">
+    <meta name="author" content="Andrew Cappelli">
+
+    <meta property="og:title" content="Projects | Andrew Cappelli">
+    <meta property="og:description" content="Projects by Andrew Cappelli — software, security, and web development work.">
+    <meta property="og:image" content="../ASSETS/IMAGES/profile-photo1.webp">
+    <meta property="og:url" content="https://cappel.li/HTML/projects.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Projects | Andrew Cappelli">
+    <meta name="twitter:description" content="Projects by Andrew Cappelli — software, security, and web development work.">
+    <meta name="twitter:image" content="../ASSETS/IMAGES/profile-photo1.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Projects | Andrew Cappelli</title>
+
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
 <body>
+
+    <div id="bg-icons" aria-hidden="true">
+        <span><i data-lucide="terminal"></i></span>
+        <span><i data-lucide="code-2"></i></span>
+        <span><i data-lucide="cpu"></i></span>
+        <span><i data-lucide="shield"></i></span>
+        <span><i data-lucide="git-branch"></i></span>
+        <span><i data-lucide="lock"></i></span>
+        <span><i data-lucide="key"></i></span>
+        <span><i data-lucide="database"></i></span>
+        <span><i data-lucide="server"></i></span>
+        <span><i data-lucide="wifi"></i></span>
+        <span><i data-lucide="bug"></i></span>
+        <span><i data-lucide="hard-drive"></i></span>
+        <span><i data-lucide="monitor"></i></span>
+        <span><i data-lucide="globe"></i></span>
+        <span><i data-lucide="hash"></i></span>
+        <span><i data-lucide="fingerprint"></i></span>
+        <span><i data-lucide="eye"></i></span>
+        <span><i data-lucide="activity"></i></span>
+        <span><i data-lucide="command"></i></span>
+        <span><i data-lucide="zap"></i></span>
+        <span><i data-lucide="layers"></i></span>
+        <span><i data-lucide="network"></i></span>
+        <span><i data-lucide="code"></i></span>
+    </div>
+
     <nav>
+        <a class="nav-brand" href="../index">&gt;_ ac</a>
         <ul>
-            <li><a href="../index.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="notes.html">Notes</a></li>
+            <li><a href="../index.html"><i data-lucide="user"></i>About</a></li>
+            <li><a href="projects.html" class="nav-active"><i data-lucide="folder-open"></i>Projects</a></li>
+            <li><a href="notes.html"><i data-lucide="file-text"></i>Notes</a></li>
         </ul>
     </nav>
+
     <div class="column-page">
         <div class="container">
-            <div class="BIG-OL-TITLE">
-            <h1>My Projects</h1>
-            </div>
-        <section class="section">
-            <p>Here are some of the projects I've worked on. Each one represents a unique challenge and learning experience.</p>
-        </section>
 
-        <section id="ProjectSection" class="section projects-grid">
-            <div class="container">
-                <!-- Projects will be dynamically inserted here -->
-            </div>
-        </section>
+            <header class="page-header fade-in-section">
+                <p class="page-header-label">// ls -la ./projects</p>
+                <h1 class="glitch" data-text="My Projects">My Projects</h1>
+            </header>
+
+            <section id="ProjectSection" class="section projects-grid fade-in-section">
+                <div class="section-heading">featured</div>
+                <!-- Projects populated by JavaScript -->
+            </section>
+
+            <section id="RepoSection" class="section fade-in-section">
+                <div class="section-heading">repositories</div>
+                <div class="repos-grid">
+                    <!-- Populated by GitHub API -->
+                </div>
+            </section>
+
+        </div>
     </div>
-</div>
-<div class="footer-div">
-    <ul class="footer-ul">
-      <li  class="footer-li"><a target="_blank" class="footer-a" href="mailto:AndrewCappelli13@gmail.com">Email</a></li>
-      <li class="footer-li"><a target="_blank" class="footer-a" href="https://www.linkedin.com/in/andrew-cappelli/">Linked-In</a></li>
-      <li class="footer-li"><a target="_blank" class="footer-a" href="https://github.com/Andrew-most-likely/">Github</a></li>
 
-      <li class="footer-li">
-        <p>👋</p>
-      </li>
-      <Li>
-        <a class="github-button" href="https://github.com/Andrew-most-likely/Personal-Website" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star buttons/github-buttons on GitHub">Star</a>
-      </Li>
-    </ul>
-  </div>
-<script src="../JS/projects.js"></script>
+    <div class="footer-div">
+        <ul class="footer-ul">
+            <li class="footer-li"><a class="footer-a" target="_blank" href="mailto:AndrewCappelli13@gmail.com"><i data-lucide="mail"></i>email</a></li>
+            <li class="footer-li"><a class="footer-a" target="_blank" href="https://www.linkedin.com/in/andrew-cappelli/"><i data-lucide="linkedin"></i>linkedin</a></li>
+            <li class="footer-li"><a class="footer-a" target="_blank" href="https://github.com/Andrew-most-likely/"><i data-lucide="github"></i>github</a></li>
+        </ul>
+    </div>
 
+    <script src="../JS/projects.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
+
 </html>

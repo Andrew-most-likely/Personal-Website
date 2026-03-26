@@ -4,76 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="A collection of Andrew Cappelli's thoughts, learnings, and observations on technology, development, and life. Stay updated with his latest insights.">
-    <meta name="keywords" content="Andrew Cappelli, Notes, Thoughts, Technology, Development, Life, Programming, Cyber Security">
+
+    <meta name="description" content="Notes and thoughts from Andrew Cappelli on technology, development, and life.">
+    <meta name="keywords" content="Andrew Cappelli, Notes, Thoughts, Technology, Development, Cyber Security">
     <meta name="author" content="Andrew Cappelli">
-    
-    <!-- Open Graph Meta Tags for Social Media Sharing -->
+
     <meta property="og:title" content="Notes | Andrew Cappelli">
-    <meta property="og:description" content="Explore Andrew Cappelli's personal notes and reflections on technology, development, and life. Learn from his journey in the tech world.">
-    <meta property="og:image" content="../ASSETS/IMAGES/profile-photo.webp">
+    <meta property="og:description" content="Notes and thoughts from Andrew Cappelli on technology, development, and life.">
+    <meta property="og:image" content="../ASSETS/IMAGES/profile-photo1.webp">
     <meta property="og:url" content="https://cappel.li/HTML/notes.html">
     <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags for Twitter Sharing -->
+
     <meta name="twitter:title" content="Notes | Andrew Cappelli">
-    <meta name="twitter:description" content="Explore a collection of Andrew Cappelli's personal thoughts on technology, development, and life. Stay updated on his latest insights.">
-    <meta name="twitter:image" content="../ASSETS/IMAGES/profile-photo.webp">
+    <meta name="twitter:description" content="Notes and thoughts from Andrew Cappelli on technology, development, and life.">
+    <meta name="twitter:image" content="../ASSETS/IMAGES/profile-photo1.webp">
     <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Title Tag -->
+
     <title>Notes | Andrew Cappelli</title>
-    
-    <!-- External Stylesheet Link -->
-    <link rel="stylesheet" href="../CSS/notes.css">
+
     <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/notes.css">
     <link rel="stylesheet" href="../CSS/responsive.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <!-- github star button-->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
 
 <body>
+
+    <div id="bg-icons" aria-hidden="true">
+        <span><i data-lucide="terminal"></i></span>
+        <span><i data-lucide="code-2"></i></span>
+        <span><i data-lucide="cpu"></i></span>
+        <span><i data-lucide="shield"></i></span>
+        <span><i data-lucide="git-branch"></i></span>
+        <span><i data-lucide="lock"></i></span>
+        <span><i data-lucide="key"></i></span>
+        <span><i data-lucide="database"></i></span>
+        <span><i data-lucide="server"></i></span>
+        <span><i data-lucide="wifi"></i></span>
+        <span><i data-lucide="bug"></i></span>
+        <span><i data-lucide="hard-drive"></i></span>
+        <span><i data-lucide="monitor"></i></span>
+        <span><i data-lucide="globe"></i></span>
+        <span><i data-lucide="hash"></i></span>
+        <span><i data-lucide="fingerprint"></i></span>
+        <span><i data-lucide="eye"></i></span>
+        <span><i data-lucide="activity"></i></span>
+        <span><i data-lucide="command"></i></span>
+        <span><i data-lucide="zap"></i></span>
+        <span><i data-lucide="layers"></i></span>
+        <span><i data-lucide="network"></i></span>
+        <span><i data-lucide="code"></i></span>
+    </div>
+
     <nav>
+        <a class="nav-brand" href="../index">&gt;_ ac</a>
         <ul>
-            <li><a href="../index.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="notes.html">Notes</a></li>
+            <li><a href="../index.html"><i data-lucide="user"></i>About</a></li>
+            <li><a href="projects.html"><i data-lucide="folder-open"></i>Projects</a></li>
+            <li><a href="notes.html" class="nav-active"><i data-lucide="file-text"></i>Notes</a></li>
         </ul>
     </nav>
+
     <div class="column-page">
         <div class="container">
-            <div class="BIG-OL-TITLE">
-            <h1>Notes & Thoughts</h1>
-            </div>
-            </section>
-            <section class="section">
-                <p>A collection of my thoughts, learnings, and observations on technology, development, and life.</p>
+
+            <header class="page-header fade-in-section">
+                <p class="page-header-label">// cat notes.log</p>
+                <h1 class="glitch" data-text="Notes &amp; Thoughts">Notes &amp; Thoughts</h1>
+            </header>
+
+            <section class="section fade-in-section">
+                <div class="section-heading">entries</div>
+                <div class="notes-grid">
+                    <!-- Notes populated by JavaScript -->
+                </div>
             </section>
 
-            <section class="section notes-grid">
-                <!-- Notes will be populated by JavaScript -->
-            </section>
         </div>
     </div>
+
     <div class="footer-div">
         <ul class="footer-ul">
-          <li  class="footer-li"><a target="_blank" class="footer-a" href="mailto:AndrewCappelli13@gmail.com">Email</a></li>
-          <li class="footer-li"><a target="_blank" class="footer-a" href="https://www.linkedin.com/in/andrew-cappelli/">Linked-In</a></li>
-          <li class="footer-li"><a target="_blank" class="footer-a" href="https://github.com/Andrew-most-likely/">Github</a></li>
-
-          <li class="footer-li">
-            <p>👋</p>
-          </li>
-          <Li>
-            <a class="github-button" href="https://github.com/Andrew-most-likely/Personal-Website" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star buttons/github-buttons on GitHub">Star</a>
-          </Li>
+            <li class="footer-li"><a class="footer-a" target="_blank" href="mailto:AndrewCappelli13@gmail.com"><i data-lucide="mail"></i>email</a></li>
+            <li class="footer-li"><a class="footer-a" target="_blank" href="https://www.linkedin.com/in/andrew-cappelli/"><i data-lucide="linkedin"></i>linkedin</a></li>
+            <li class="footer-li"><a class="footer-a" target="_blank" href="https://github.com/Andrew-most-likely/"><i data-lucide="github"></i>github</a></li>
         </ul>
-      </div>
+    </div>
+
     <script src="../JS/notes.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
