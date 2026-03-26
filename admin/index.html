@@ -1,11 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notes Admin | cappel.li</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1C1917; --surface: #262320; --surface-2: #2E2B28;
+      --border: rgba(255,255,255,0.08); --border-hi: rgba(255,255,255,0.15);
+      --body: #C9C3BB; --heading: #EDE8E0; --muted: #7A7570; --accent: #DA7756;
+    }
+    body {
+      background: var(--bg); color: var(--body);
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh; padding: 1.25rem;
+    }
+    h1 { color: var(--heading); font-size: 1.3rem; }
+    h2 { color: var(--heading); font-size: 1.1rem; }
+    p  { line-height: 1.5; }
+    a  { color: var(--accent); }
+
+    label {
+      display: block; font-size: 0.78rem; color: var(--muted);
+      margin-top: 1.1rem; margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    input, textarea {
+      width: 100%; background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--body); padding: 0.7rem 0.85rem;
+      font-size: 1rem; font-family: inherit; outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus { border-color: var(--border-hi); }
+    textarea { min-height: 180px; resize: vertical; line-height: 1.55; }
+
+    button { cursor: pointer; border: none; border-radius: 8px; padding: 0.65rem 1.1rem; font-size: 0.9rem; font-family: inherit; transition: opacity 0.15s; }
+    button:active { opacity: 0.75; }
+    .btn-primary  { background: var(--accent); color: #fff; font-weight: 600; }
+    .btn-wide     { width: 100%; margin-top: 1rem; }
+    .btn-ghost    { background: var(--surface-2); color: var(--body); border: 1px solid var(--border); }
+    .btn-danger   { background: transparent; color: #e06060; border: 1px solid rgba(224,96,96,0.25); }
+
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 0.75rem; }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 0.65rem; }
+    .card-title { color: var(--heading); font-weight: 600; font-size: 0.92rem; }
+    .card-date  { color: var(--muted); font-size: 0.73rem; margin-top: 0.2rem; }
+    .card-actions { display: flex; gap: 0.5rem; margin-top: 0.65rem; }
+
+    .status { padding: 0.7rem 0.9rem; border-radius: 8px; font-size: 0.83rem; margin-bottom: 1rem; }
+    .status.success { background: rgba(80,200,120,0.08); color: #7dca9a; border: 1px solid rgba(80,200,120,0.18); }
+    .status.error   { background: rgba(224,80,80,0.08); color: #e08080; border: 1px solid rgba(224,80,80,0.18); }
+    .status.loading { background: rgba(218,119,86,0.08); color: var(--accent); border: 1px solid rgba(218,119,86,0.18); }
+
+    .hint { font-size: 0.74rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.5; }
+
+    #setup, #main, #editor { display: none; max-width: 560px; margin: 0 auto; padding-top: 1rem; }
+    .signout { font-size: 0.73rem; color: var(--muted); text-align: center; margin-top: 1.25rem; }
+    .signout a { color: var(--muted); }
+    .empty { color: var(--muted); font-size: 0.85rem; font-style: italic; padding: 0.5rem 0; }
+  </style>
 </head>
 <body>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+
+<!-- ── Setup screen ───────────────────────────────────────── -->
+<div id="setup">
+  <div class="header"><h1>&gt;_ notes admin</h1></div>
+  <p style="color:var(--muted);font-size:0.84rem;margin-bottom:1.5rem">
+    Paste a GitHub token to manage notes. It's stored only in your browser — never sent anywhere except the GitHub API.
+  </p>
+  <label>GitHub Personal Access Token</label>
+  <input type="password" id="tokenInput" placeholder="github_pat_…" autocomplete="off" />
+  <p class="hint">
+    Create one at <strong>github.com → Settings → Developer settings → Fine-grained tokens</strong>.<br>
+    Set repository access to <em>Andrew-most-likely/Personal-Website</em> and enable
+    <em>Contents: Read &amp; Write</em>.
+  </p>
+  <div id="setupStatus"></div>
+  <button class="btn-primary btn-wide" onclick="saveToken()">Connect</button>
+</div>
+
+<!-- ── Notes list ─────────────────────────────────────────── -->
+<div id="main">
+  <div class="header">
+    <h1>&gt;_ notes admin</h1>
+    <button class="btn-primary" onclick="showEditor(null)">+ New</button>
+  </div>
+  <div id="mainStatus"></div>
+  <div id="notesList"></div>
+  <p class="signout"><a href="#" onclick="clearToken()">Sign out</a></p>
+</div>
+
+<!-- ── Note editor ────────────────────────────────────────── -->
+<div id="editor">
+  <div class="header">
+    <h2 id="editorHeading">New Note</h2>
+    <button class="btn-ghost" onclick="showMain()">← Back</button>
+  </div>
+  <div id="editorStatus"></div>
+  <label>Title</label>
+  <input type="text" id="fTitle" placeholder="Note title" />
+  <label>Date</label>
+  <input type="date" id="fDate" />
+  <label>Preview <span style="font-weight:400">(shown on the notes page)</span></label>
+  <input type="text" id="fPreview" placeholder="One-line teaser…" />
+  <label>Content</label>
+  <textarea id="fContent" placeholder="Write your note here…"></textarea>
+  <label>Tags <span style="font-weight:400">(comma separated)</span></label>
+  <input type="text" id="fTags" placeholder="tech, thoughts, web" />
+  <button class="btn-primary btn-wide" onclick="saveNote()">Save &amp; Publish</button>
+</div>
+
+<script>
+const OWNER  = 'Andrew-most-likely';
+const REPO   = 'Personal-Website';
+const FILE   = 'JSON/notes.json';
+const BRANCH = 'main';
+
+let token        = localStorage.getItem('gh_token');
+let notesSha     = null;
+let notes        = [];
+let editingIndex = null;
+
+// ── Helpers ──────────────────────────────────────────────────
+
+function show(id) {
+  ['setup', 'main', 'editor'].forEach(s => document.getElementById(s).style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
+
+function setStatus(elId, type, msg) {
+  const el = document.getElementById(elId);
+  el.innerHTML = msg ? `<div class="status ${type}">${msg}</div>` : '';
+}
+
+async function ghFetch(path, opts = {}) {
+  return fetch(`https://api.github.com/repos/${OWNER}/${REPO}/${path}`, {
+    ...opts,
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json',
+      ...(opts.headers || {})
+    }
+  });
+}
+
+async function loadNotes() {
+  const res = await ghFetch(`contents/${FILE}?ref=${BRANCH}`);
+  if (!res.ok) throw new Error(`GitHub API error ${res.status}`);
+  const data   = await res.json();
+  notesSha     = data.sha;
+  const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+  notes        = parsed.notes || [];
+}
+
+async function commitNotes(message) {
+  const body    = JSON.stringify({ notes }, null, 2);
+  const encoded = btoa(unescape(encodeURIComponent(body)));
+  const res = await ghFetch(`contents/${FILE}`, {
+    method: 'PUT',
+    body: JSON.stringify({ message, content: encoded, sha: notesSha, branch: BRANCH })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || 'Commit failed');
+  }
+  const data = await res.json();
+  notesSha = data.content.sha;
+}
+
+function today() { return new Date().toISOString().slice(0, 10); }
+
+// ── Setup ────────────────────────────────────────────────────
+
+async function saveToken() {
+  const t = document.getElementById('tokenInput').value.trim();
+  if (!t) return;
+  token = t;
+  setStatus('setupStatus', 'loading', 'Verifying…');
+  try {
+    await loadNotes();
+    localStorage.setItem('gh_token', token);
+    showMain();
+  } catch (e) {
+    setStatus('setupStatus', 'error', 'Could not connect — check the token and its permissions.');
+  }
+}
+
+function clearToken() {
+  localStorage.removeItem('gh_token');
+  token = null;
+  show('setup');
+}
+
+// ── Main list ────────────────────────────────────────────────
+
+async function showMain() {
+  show('main');
+  setStatus('mainStatus', 'loading', 'Loading notes…');
+  document.getElementById('notesList').innerHTML = '';
+  try {
+    await loadNotes();
+    setStatus('mainStatus', '', '');
+    renderList();
+  } catch (e) {
+    setStatus('mainStatus', 'error', 'Failed to load notes. Token may have expired.');
+  }
+}
+
+function renderList() {
+  const list   = document.getElementById('notesList');
+  const sorted = [...notes]
+    .map((n, i) => ({ ...n, _i: i }))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  if (sorted.length === 0) {
+    list.innerHTML = '<p class="empty">No notes yet — hit + New to write your first one.</p>';
+    return;
+  }
+  list.innerHTML = sorted.map(note => `
+    <div class="card">
+      <div class="card-title">${note.title}</div>
+      <div class="card-date">${note.date}</div>
+      <div class="card-actions">
+        <button class="btn-ghost" style="font-size:0.8rem;padding:0.4rem 0.8rem"
+          onclick="showEditor(${note._i})">Edit</button>
+        <button class="btn-danger" style="font-size:0.8rem;padding:0.4rem 0.8rem"
+          onclick="deleteNote(${note._i})">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── Editor ───────────────────────────────────────────────────
+
+function showEditor(index) {
+  editingIndex = index;
+  show('editor');
+  document.getElementById('editorStatus').innerHTML = '';
+
+  if (index === null) {
+    document.getElementById('editorHeading').textContent = 'New Note';
+    document.getElementById('fTitle').value   = '';
+    document.getElementById('fDate').value    = today();
+    document.getElementById('fPreview').value = '';
+    document.getElementById('fContent').value = '';
+    document.getElementById('fTags').value    = '';
+  } else {
+    const n = notes[index];
+    document.getElementById('editorHeading').textContent = 'Edit Note';
+    document.getElementById('fTitle').value   = n.title;
+    document.getElementById('fDate').value    = n.date;
+    document.getElementById('fPreview').value = n.preview;
+    document.getElementById('fContent').value = n.content;
+    document.getElementById('fTags').value    = n.tags.join(', ');
+  }
+}
+
+async function saveNote() {
+  const title   = document.getElementById('fTitle').value.trim();
+  const date    = document.getElementById('fDate').value;
+  const preview = document.getElementById('fPreview').value.trim();
+  const content = document.getElementById('fContent').value.trim();
+  const tags    = document.getElementById('fTags').value
+    .split(',').map(t => t.trim()).filter(Boolean);
+
+  if (!title || !date || !content) {
+    setStatus('editorStatus', 'error', 'Title, date, and content are required.');
+    return;
+  }
+
+  setStatus('editorStatus', 'loading', 'Publishing…');
+
+  const note = { title, date, preview, content, tags, lastUpdated: today() };
+  const prev = editingIndex !== null ? notes[editingIndex] : null;
+
+  if (editingIndex === null) {
+    notes.push(note);
+  } else {
+    notes[editingIndex] = note;
+  }
+
+  try {
+    const msg = editingIndex === null ? `Add note: ${title}` : `Update note: ${title}`;
+    await commitNotes(msg);
+    setStatus('editorStatus', 'success', 'Published! The site will update in a moment.');
+    setTimeout(showMain, 1800);
+  } catch (e) {
+    // Roll back
+    if (editingIndex === null) notes.pop();
+    else if (prev) notes[editingIndex] = prev;
+    setStatus('editorStatus', 'error', `Failed: ${e.message}`);
+  }
+}
+
+async function deleteNote(index) {
+  const n = notes[index];
+  if (!confirm(`Delete "${n.title}"?`)) return;
+  const removed = notes.splice(index, 1)[0];
+  setStatus('mainStatus', 'loading', 'Deleting…');
+  try {
+    await commitNotes(`Delete note: ${removed.title}`);
+    renderList();
+    setStatus('mainStatus', '', '');
+  } catch (e) {
+    notes.splice(index, 0, removed);
+    setStatus('mainStatus', 'error', `Failed to delete: ${e.message}`);
+  }
+}
+
+// ── Init ─────────────────────────────────────────────────────
+if (token) showMain();
+else show('setup');
+</script>
 </body>
 </html>
