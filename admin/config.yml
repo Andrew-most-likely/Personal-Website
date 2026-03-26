@@ -3,7 +3,7 @@ backend:
   repo: Andrew-most-likely/Personal-Website
   branch: main
   auth_type: pkce
-  app_id: REPLACE_WITH_YOUR_GITHUB_OAUTH_APP_CLIENT_ID
+  app_id: Ov23liLFeYsNcZdcfdrv
 
 # Setup steps (one-time):
 #   1. Go to github.com → Settings → Developer settings → OAuth Apps → New OAuth App
