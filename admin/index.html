@@ -3,112 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes Admin | cappel.li</title>
+  <title>Form</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #1C1917; --surface: #262320; --surface-2: #2E2B28;
-      --border: rgba(255,255,255,0.08); --border-hi: rgba(255,255,255,0.15);
-      --body: #C9C3BB; --heading: #EDE8E0; --muted: #7A7570; --accent: #DA7756;
-    }
     body {
-      background: var(--bg); color: var(--body);
-      font-family: system-ui, -apple-system, sans-serif;
-      min-height: 100vh; padding: 1.25rem;
+      background: #f5f5f5; color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px; min-height: 100vh; padding: 2rem 1.25rem;
     }
-    h1 { color: var(--heading); font-size: 1.3rem; }
-    h2 { color: var(--heading); font-size: 1.1rem; }
-    p  { line-height: 1.5; }
-    a  { color: var(--accent); }
-
+    h2 { font-size: 1rem; font-weight: normal; color: #555; margin-bottom: 1.25rem; }
     label {
-      display: block; font-size: 0.78rem; color: var(--muted);
-      margin-top: 1.1rem; margin-bottom: 0.3rem; letter-spacing: 0.03em;
+      display: block; font-size: 0.78rem; color: #666;
+      margin-top: 1rem; margin-bottom: 0.25rem;
     }
     input, textarea {
-      width: 100%; background: var(--surface-2); border: 1px solid var(--border);
-      border-radius: 8px; color: var(--body); padding: 0.7rem 0.85rem;
-      font-size: 1rem; font-family: inherit; outline: none;
-      transition: border-color 0.15s;
+      width: 100%; background: #fff; border: 1px solid #ccc;
+      border-radius: 3px; color: #333; padding: 0.5rem 0.65rem;
+      font-size: 0.9rem; font-family: inherit; outline: none;
     }
-    input:focus, textarea:focus { border-color: var(--border-hi); }
-    textarea { min-height: 180px; resize: vertical; line-height: 1.55; }
+    input:focus, textarea:focus { border-color: #999; }
+    textarea { min-height: 180px; resize: vertical; line-height: 1.5; }
+    button {
+      cursor: pointer; border: 1px solid #bbb; border-radius: 3px;
+      padding: 0.5rem 1rem; font-size: 0.85rem; font-family: inherit;
+      background: #e8e8e8; color: #333;
+    }
+    button:hover { background: #ddd; }
+    button:active { opacity: 0.8; }
+    .btn-wide { width: 100%; margin-top: 1rem; }
+    .btn-submit { background: #e0e0e0; font-weight: bold; }
 
-    button { cursor: pointer; border: none; border-radius: 8px; padding: 0.65rem 1.1rem; font-size: 0.9rem; font-family: inherit; transition: opacity 0.15s; }
-    button:active { opacity: 0.75; }
-    .btn-primary  { background: var(--accent); color: #fff; font-weight: 600; }
-    .btn-wide     { width: 100%; margin-top: 1rem; }
-    .btn-ghost    { background: var(--surface-2); color: var(--body); border: 1px solid var(--border); }
-    .btn-danger   { background: transparent; color: #e06060; border: 1px solid rgba(224,96,96,0.25); }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; gap: 0.75rem; }
 
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 0.75rem; }
+    .item { background: #fff; border: 1px solid #ddd; border-radius: 3px; padding: 0.75rem; margin-bottom: 0.5rem; }
+    .item-title { color: #333; font-weight: bold; font-size: 0.85rem; }
+    .item-date  { color: #888; font-size: 0.72rem; margin-top: 0.15rem; }
+    .item-actions { display: flex; gap: 0.4rem; margin-top: 0.5rem; }
+    .item-actions button { font-size: 0.75rem; padding: 0.3rem 0.6rem; }
 
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 0.65rem; }
-    .card-title { color: var(--heading); font-weight: 600; font-size: 0.92rem; }
-    .card-date  { color: var(--muted); font-size: 0.73rem; margin-top: 0.2rem; }
-    .card-actions { display: flex; gap: 0.5rem; margin-top: 0.65rem; }
+    .msg { padding: 0.55rem 0.75rem; border-radius: 3px; font-size: 0.8rem; margin-bottom: 0.85rem; background: #efefef; border: 1px solid #ddd; color: #555; }
 
-    .status { padding: 0.7rem 0.9rem; border-radius: 8px; font-size: 0.83rem; margin-bottom: 1rem; }
-    .status.success { background: rgba(80,200,120,0.08); color: #7dca9a; border: 1px solid rgba(80,200,120,0.18); }
-    .status.error   { background: rgba(224,80,80,0.08); color: #e08080; border: 1px solid rgba(224,80,80,0.18); }
-    .status.loading { background: rgba(218,119,86,0.08); color: var(--accent); border: 1px solid rgba(218,119,86,0.18); }
-
-    .hint { font-size: 0.74rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.5; }
-
-    #setup, #main, #editor { display: none; max-width: 560px; margin: 0 auto; padding-top: 1rem; }
-    .signout { font-size: 0.73rem; color: var(--muted); text-align: center; margin-top: 1.25rem; }
-    .signout a { color: var(--muted); }
-    .empty { color: var(--muted); font-size: 0.85rem; font-style: italic; padding: 0.5rem 0; }
+    #setup, #main, #editor { display: none; max-width: 520px; margin: 0 auto; }
+    .foot { font-size: 0.72rem; color: #aaa; text-align: center; margin-top: 1.25rem; }
+    .foot a { color: #aaa; }
+    .empty { color: #999; font-size: 0.82rem; font-style: italic; padding: 0.4rem 0; }
   </style>
 </head>
 <body>
 
-<!-- ── Setup screen ───────────────────────────────────────── -->
 <div id="setup">
-  <div class="header"><h1>&gt;_ notes admin</h1></div>
-  <p style="color:var(--muted);font-size:0.84rem;margin-bottom:1.5rem">
-    Paste a GitHub token to manage notes. It's stored only in your browser — never sent anywhere except the GitHub API.
-  </p>
-  <label>GitHub Personal Access Token</label>
-  <input type="password" id="tokenInput" placeholder="github_pat_…" autocomplete="off" />
-  <p class="hint">
-    Create one at <strong>github.com → Settings → Developer settings → Fine-grained tokens</strong>.<br>
-    Set repository access to <em>Andrew-most-likely/Personal-Website</em> and enable
-    <em>Contents: Read &amp; Write</em>.
-  </p>
+  <h2>Sign in</h2>
+  <label>Access key</label>
+  <input type="password" id="tokenInput" autocomplete="off" />
   <div id="setupStatus"></div>
-  <button class="btn-primary btn-wide" onclick="saveToken()">Connect</button>
+  <button class="btn-submit btn-wide" onclick="saveToken()">Continue</button>
 </div>
 
-<!-- ── Notes list ─────────────────────────────────────────── -->
 <div id="main">
   <div class="header">
-    <h1>&gt;_ notes admin</h1>
-    <button class="btn-primary" onclick="showEditor(null)">+ New</button>
+    <h2>Entries</h2>
+    <button onclick="showEditor(null)">+ Add</button>
   </div>
   <div id="mainStatus"></div>
   <div id="notesList"></div>
-  <p class="signout"><a href="#" onclick="clearToken()">Sign out</a></p>
+  <p class="foot"><a href="#" onclick="clearToken()">Sign out</a></p>
 </div>
 
-<!-- ── Note editor ────────────────────────────────────────── -->
 <div id="editor">
   <div class="header">
-    <h2 id="editorHeading">New Note</h2>
-    <button class="btn-ghost" onclick="showMain()">← Back</button>
+    <h2 id="editorHeading">New entry</h2>
+    <button onclick="showMain()">&larr; Back</button>
   </div>
   <div id="editorStatus"></div>
   <label>Title</label>
-  <input type="text" id="fTitle" placeholder="Note title" />
+  <input type="text" id="fTitle" />
   <label>Date</label>
   <input type="date" id="fDate" />
-  <label>Preview <span style="font-weight:400">(shown on the notes page)</span></label>
-  <input type="text" id="fPreview" placeholder="One-line teaser…" />
-  <label>Content</label>
-  <textarea id="fContent" placeholder="Write your note here…"></textarea>
-  <label>Tags <span style="font-weight:400">(comma separated)</span></label>
-  <input type="text" id="fTags" placeholder="tech, thoughts, web" />
-  <button class="btn-primary btn-wide" onclick="saveNote()">Save &amp; Publish</button>
+  <label>Summary</label>
+  <input type="text" id="fPreview" />
+  <label>Body</label>
+  <textarea id="fContent"></textarea>
+  <label>Tags</label>
+  <input type="text" id="fTags" />
+  <button class="btn-submit btn-wide" onclick="saveNote()">Save</button>
 </div>
 
 <script>
@@ -122,16 +99,14 @@ let notesSha     = null;
 let notes        = [];
 let editingIndex = null;
 
-// ── Helpers ──────────────────────────────────────────────────
-
 function show(id) {
   ['setup', 'main', 'editor'].forEach(s => document.getElementById(s).style.display = 'none');
   document.getElementById(id).style.display = 'block';
 }
 
-function setStatus(elId, type, msg) {
+function setStatus(elId, msg) {
   const el = document.getElementById(elId);
-  el.innerHTML = msg ? `<div class="status ${type}">${msg}</div>` : '';
+  el.innerHTML = msg ? `<div class="msg">${msg}</div>` : '';
 }
 
 async function ghFetch(path, opts = {}) {
@@ -148,7 +123,7 @@ async function ghFetch(path, opts = {}) {
 
 async function loadNotes() {
   const res = await ghFetch(`contents/${FILE}?ref=${BRANCH}`);
-  if (!res.ok) throw new Error(`GitHub API error ${res.status}`);
+  if (!res.ok) throw new Error(`${res.status}`);
   const data   = await res.json();
   notesSha     = data.sha;
   const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
@@ -164,7 +139,7 @@ async function commitNotes(message) {
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || 'Commit failed');
+    throw new Error(err.message || 'Failed');
   }
   const data = await res.json();
   notesSha = data.content.sha;
@@ -172,19 +147,17 @@ async function commitNotes(message) {
 
 function today() { return new Date().toISOString().slice(0, 10); }
 
-// ── Setup ────────────────────────────────────────────────────
-
 async function saveToken() {
   const t = document.getElementById('tokenInput').value.trim();
   if (!t) return;
   token = t;
-  setStatus('setupStatus', 'loading', 'Verifying…');
+  setStatus('setupStatus', 'Checking…');
   try {
     await loadNotes();
     localStorage.setItem('gh_token', token);
     showMain();
   } catch (e) {
-    setStatus('setupStatus', 'error', 'Could not connect — check the token and its permissions.');
+    setStatus('setupStatus', 'Invalid key.');
   }
 }
 
@@ -194,18 +167,16 @@ function clearToken() {
   show('setup');
 }
 
-// ── Main list ────────────────────────────────────────────────
-
 async function showMain() {
   show('main');
-  setStatus('mainStatus', 'loading', 'Loading notes…');
+  setStatus('mainStatus', 'Loading…');
   document.getElementById('notesList').innerHTML = '';
   try {
     await loadNotes();
-    setStatus('mainStatus', '', '');
+    setStatus('mainStatus', '');
     renderList();
   } catch (e) {
-    setStatus('mainStatus', 'error', 'Failed to load notes. Token may have expired.');
+    setStatus('mainStatus', 'Could not load. Key may have expired.');
   }
 }
 
@@ -216,24 +187,20 @@ function renderList() {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   if (sorted.length === 0) {
-    list.innerHTML = '<p class="empty">No notes yet — hit + New to write your first one.</p>';
+    list.innerHTML = '<p class="empty">No entries.</p>';
     return;
   }
   list.innerHTML = sorted.map(note => `
-    <div class="card">
-      <div class="card-title">${note.title}</div>
-      <div class="card-date">${note.date}</div>
-      <div class="card-actions">
-        <button class="btn-ghost" style="font-size:0.8rem;padding:0.4rem 0.8rem"
-          onclick="showEditor(${note._i})">Edit</button>
-        <button class="btn-danger" style="font-size:0.8rem;padding:0.4rem 0.8rem"
-          onclick="deleteNote(${note._i})">Delete</button>
+    <div class="item">
+      <div class="item-title">${note.title}</div>
+      <div class="item-date">${note.date}</div>
+      <div class="item-actions">
+        <button onclick="showEditor(${note._i})">Edit</button>
+        <button onclick="deleteNote(${note._i})">Delete</button>
       </div>
     </div>
   `).join('');
 }
-
-// ── Editor ───────────────────────────────────────────────────
 
 function showEditor(index) {
   editingIndex = index;
@@ -241,7 +208,7 @@ function showEditor(index) {
   document.getElementById('editorStatus').innerHTML = '';
 
   if (index === null) {
-    document.getElementById('editorHeading').textContent = 'New Note';
+    document.getElementById('editorHeading').textContent = 'New entry';
     document.getElementById('fTitle').value   = '';
     document.getElementById('fDate').value    = today();
     document.getElementById('fPreview').value = '';
@@ -249,7 +216,7 @@ function showEditor(index) {
     document.getElementById('fTags').value    = '';
   } else {
     const n = notes[index];
-    document.getElementById('editorHeading').textContent = 'Edit Note';
+    document.getElementById('editorHeading').textContent = 'Edit entry';
     document.getElementById('fTitle').value   = n.title;
     document.getElementById('fDate').value    = n.date;
     document.getElementById('fPreview').value = n.preview;
@@ -267,11 +234,11 @@ async function saveNote() {
     .split(',').map(t => t.trim()).filter(Boolean);
 
   if (!title || !date || !content) {
-    setStatus('editorStatus', 'error', 'Title, date, and content are required.');
+    setStatus('editorStatus', 'Required fields missing.');
     return;
   }
 
-  setStatus('editorStatus', 'loading', 'Publishing…');
+  setStatus('editorStatus', 'Saving…');
 
   const note = { title, date, preview, content, tags, lastUpdated: today() };
   const prev = editingIndex !== null ? notes[editingIndex] : null;
@@ -285,13 +252,12 @@ async function saveNote() {
   try {
     const msg = editingIndex === null ? `Add note: ${title}` : `Update note: ${title}`;
     await commitNotes(msg);
-    setStatus('editorStatus', 'success', 'Published! The site will update in a moment.');
+    setStatus('editorStatus', 'Saved.');
     setTimeout(showMain, 1800);
   } catch (e) {
-    // Roll back
     if (editingIndex === null) notes.pop();
     else if (prev) notes[editingIndex] = prev;
-    setStatus('editorStatus', 'error', `Failed: ${e.message}`);
+    setStatus('editorStatus', `Error: ${e.message}`);
   }
 }
 
@@ -299,18 +265,17 @@ async function deleteNote(index) {
   const n = notes[index];
   if (!confirm(`Delete "${n.title}"?`)) return;
   const removed = notes.splice(index, 1)[0];
-  setStatus('mainStatus', 'loading', 'Deleting…');
+  setStatus('mainStatus', 'Deleting…');
   try {
     await commitNotes(`Delete note: ${removed.title}`);
     renderList();
-    setStatus('mainStatus', '', '');
+    setStatus('mainStatus', '');
   } catch (e) {
     notes.splice(index, 0, removed);
-    setStatus('mainStatus', 'error', `Failed to delete: ${e.message}`);
+    setStatus('mainStatus', `Error: ${e.message}`);
   }
 }
 
-// ── Init ─────────────────────────────────────────────────────
 if (token) showMain();
 else show('setup');
 </script>
