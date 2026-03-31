@@ -57,6 +57,17 @@
         "Claude"
       ],
       "lastUpdated": "2026-03-30"
+    },
+    {
+      "title": "HTB",
+      "date": "2026-03-31",
+      "preview": "New HTB challenges",
+      "content": "I completed my two first Hack the box challenges today and I really am excited to learn. The two challenges mostly focused on nmap scans which I assumed but they linked together telnet and ftp as well.",
+      "tags": [
+        "nmap",
+        "HTB"
+      ],
+      "lastUpdated": "2026-03-31"
     }
   ]
 }
