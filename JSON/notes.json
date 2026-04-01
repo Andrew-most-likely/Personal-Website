@@ -68,6 +68,17 @@
         "HTB"
       ],
       "lastUpdated": "2026-03-31"
+    },
+    {
+      "title": "NUKE-IT",
+      "date": "2026-04-01",
+      "preview": "New cli tool",
+      "content": "I created the a cli tool called nukeit today which disables all inbound and outbound traffic which was fun to make and taught me a whole lot but when talking to people they all had one question why the real reason why is that I thought it was cool additionally no other tool is so concise in its ability to pull of what nukeit does with one three letter command it does what 15 clicks would do in windows and 4 commands in Linux would do all in one but that still leaves the question should I start making useful tools or just stick with the fun ones",
+      "tags": [
+        "nukeit",
+        "cli"
+      ],
+      "lastUpdated": "2026-04-01"
     }
   ]
 }
