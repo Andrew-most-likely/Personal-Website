@@ -79,6 +79,18 @@
         "cli"
       ],
       "lastUpdated": "2026-04-01"
+    },
+    {
+      "title": "WSL is lame",
+      "date": "2026-04-09",
+      "preview": "New tool on the block",
+      "content": "3 or 4 days ago, I decided to test out some other CMD additions I had been thinking about, but everything I thought of was, in some way, 100% a stupid idea. So I went ahead and did that stupid idea anyway and made L2W, a Linux to Windows conversion layer for Linux commands. It’s stupid because WSL can do everything and more than L2W can, but it was definitely fun to make and good practice.",
+      "tags": [
+        "programming",
+        "Linux",
+        "Practice"
+      ],
+      "lastUpdated": "2026-04-09"
     }
   ]
 }
