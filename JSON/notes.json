@@ -91,6 +91,17 @@
         "Practice"
       ],
       "lastUpdated": "2026-04-10"
+    },
+    {
+      "title": "Mullvad is glitchy",
+      "date": "2026-05-28",
+      "preview": "race condition",
+      "content": "Windows specific Mullvad problem: On machines where physical network adapters initialize slowly (e.g. USB ethernet, certain wifi cards, or simply slow hardware), mullvad-daemon can start before any adapter is ready. The daemon applies its WFP kill switch rules immediately on startup. When the adapter comes up moments later, it falls under those rules with no established tunnel, leaving the system in a state where all network traffic is blocked and the daemon cannot recover without a manual restart.\n\nThis is fixed through this PR on MullVads public repo\n\nhttps://github.com/mullvad/mullvadvpn-app/pull/10489",
+      "tags": [
+        "VPN",
+        "Race-Condition"
+      ],
+      "lastUpdated": "2026-05-28"
     }
   ]
 }
