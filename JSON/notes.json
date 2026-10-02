@@ -25,6 +25,78 @@
       "lastUpdated": "2025-02-11"
     },
     {
+      "title": "Passwords are on borrowed time",
+      "date": "2025-03-14",
+      "preview": "Passkeys and why I finally use a password manager",
+      "content": "Most people I help at work still reuse one or two passwords for everything. I get it, remembering fifty unique passwords is impossible. That is exactly why password managers exist, and why I think every person should use one.\n\nThe bigger shift coming is passkeys. Instead of a secret you type, a passkey is a key pair. The private key stays on your device and the site only stores the public key. There is nothing to phish, because there is nothing for you to type into a fake login page, and nothing useful to steal from the server.\n\nThey are not perfect yet. Syncing between ecosystems is still awkward, and account recovery is the weak point. But for anything that supports them, I am turning them on.",
+      "tags": [
+        "passwords",
+        "passkeys",
+        "security"
+      ],
+      "lastUpdated": "2025-03-14"
+    },
+    {
+      "title": "It's always DNS",
+      "date": "2025-04-17",
+      "preview": "A short ode to the protocol that breaks everything",
+      "content": "There is a running joke in IT: it's not DNS, there's no way it's DNS, it was DNS.\n\nDNS turns names like cappel.li into IP addresses. When it fails, everything looks broken at once. Websites will not load, email stops, and logins time out, even though the network itself is fine. That is why it fools people. The symptoms look like an outage, not a lookup problem.\n\nMy troubleshooting order now: can I ping an IP address directly? If yes, the network is fine and I check name resolution next with nslookup or dig. Checking that one thing early has saved me a lot of time chasing the wrong problem.",
+      "tags": [
+        "networking",
+        "DNS",
+        "troubleshooting"
+      ],
+      "lastUpdated": "2025-04-17"
+    },
+    {
+      "title": "Why phishing still works",
+      "date": "2025-05-20",
+      "preview": "The weakest link is not the firewall",
+      "content": "Companies spend a lot on firewalls, endpoint protection, and filtering, and phishing still gets through. The reason is simple: phishing does not attack the computer, it attacks the person.\n\nGood phishing emails use urgency (your account will be locked), authority (a message from the IT department or the CEO), and familiarity (a shared document from a coworker). None of that trips a technical control.\n\nThe best defense I know is boring: slow down. Hover over links before clicking. Check the real sender address, not just the display name. If a message asks for credentials or money, confirm it through a separate channel. Training helps, but making it easy and normal to report suspicious emails helps more.",
+      "tags": [
+        "phishing",
+        "social-engineering",
+        "awareness"
+      ],
+      "lastUpdated": "2025-05-20"
+    },
+    {
+      "title": "MFA fatigue",
+      "date": "2025-06-18",
+      "preview": "When the second factor becomes the attack",
+      "content": "Multi-factor authentication is one of the best things you can turn on. But push-based MFA has a weakness: if an attacker already has your password, they can spam login requests until you tap approve just to make the notifications stop. This is called MFA fatigue, or push bombing.\n\nThe fixes are straightforward. Use number matching, where you have to type a code shown on the login screen into your phone. Limit how many push requests can be sent in a short window. And teach people that an unexpected MFA prompt means your password is already compromised, so report it and change it.\n\nMFA is still worth it. The point is that it is a layer, not a finish line.",
+      "tags": [
+        "MFA",
+        "authentication",
+        "security"
+      ],
+      "lastUpdated": "2025-06-18"
+    },
+    {
+      "title": "Learning Wireshark",
+      "date": "2025-07-22",
+      "preview": "Seeing what your network is actually doing",
+      "content": "Wireshark is one of those tools that looks overwhelming the first time you open it. Thousands of packets scroll by and none of it makes sense.\n\nWhat helped me was starting with display filters instead of trying to read everything. A few I use constantly:\n\ndns  (just name lookups)\nhttp  (unencrypted web traffic)\nip.addr == 192.168.1.10  (traffic to or from one host)\ntcp.flags.syn == 1  (new connection attempts)\n\nOnce you filter down, patterns show up quickly: a device that phones home every few seconds, a misconfigured service retrying forever, or a lookup that fails before every slow page load. Packet captures do not lie, which makes them the best tiebreaker when two people disagree about what is wrong.",
+      "tags": [
+        "Wireshark",
+        "networking",
+        "tools"
+      ],
+      "lastUpdated": "2025-07-22"
+    },
+    {
+      "title": "VLANs in plain English",
+      "date": "2025-08-19",
+      "preview": "One switch, many networks",
+      "content": "A VLAN lets you split one physical switch into several separate logical networks. Devices on different VLANs cannot talk to each other directly, even if they are plugged into the same hardware, unless traffic is routed between them on purpose.\n\nWhy it matters for security: you can put printers, cameras, guests, staff, and servers on separate VLANs. If a cheap IoT camera gets compromised, it does not get a free path to the file server. Every connection between segments has to go through a router or firewall, where you can control and log it.\n\nSegmentation is not glamorous, but it turns one big flat network where one mistake exposes everything into smaller rooms with locked doors.",
+      "tags": [
+        "VLANs",
+        "networking",
+        "segmentation"
+      ],
+      "lastUpdated": "2025-08-19"
+    },
+    {
       "title": "New Projects",
       "date": "2025-09-22",
       "preview": "Hopefully I'll have a new project...",
@@ -34,6 +106,66 @@
         "Projects"
       ],
       "lastUpdated": "2025-09-22"
+    },
+    {
+      "title": "Cybersecurity Awareness Month",
+      "date": "2025-10-15",
+      "preview": "Four habits that cover most of the risk",
+      "content": "October is Cybersecurity Awareness Month, so here is the short version of what I tell friends and family. Most real-world compromises come down to a few basics:\n\n1. Use a password manager and unique passwords.\n2. Turn on MFA everywhere it is offered, especially email.\n3. Install updates. Most attacks use vulnerabilities that already have patches.\n4. Be suspicious of urgency. Real organizations rarely need something from you in the next ten minutes.\n\nNone of this is advanced. That is the point. Attackers usually go after the easy targets, and these four habits make you a lot less easy.",
+      "tags": [
+        "awareness",
+        "basics",
+        "security"
+      ],
+      "lastUpdated": "2025-10-15"
+    },
+    {
+      "title": "Least privilege",
+      "date": "2025-11-12",
+      "preview": "Nobody needs admin all the time",
+      "content": "The principle of least privilege means every user, service, and program gets only the access it needs to do its job, and nothing more.\n\nIt sounds obvious, but in practice people end up with admin rights because it is convenient. One installer needed it once, so the account kept it forever. That convenience is exactly what malware is looking for. Code running as a standard user can do some damage. Code running as an administrator can do almost anything.\n\nIn Active Directory this means separate admin accounts, group-based permissions instead of one-off grants, and actually removing access when someone changes roles. It is not exciting work, but it limits the damage from almost every other kind of mistake.",
+      "tags": [
+        "least-privilege",
+        "Active-Directory",
+        "access-control"
+      ],
+      "lastUpdated": "2025-11-12"
+    },
+    {
+      "title": "The xz backdoor",
+      "date": "2025-12-10",
+      "preview": "A supply chain attack that almost worked",
+      "content": "Looking back on big security stories, the xz utils backdoor (CVE-2024-3094) is still the one I think about most. A contributor spent a long time earning trust in a small but widely used open source compression project, then slipped a backdoor into release tarballs that could affect SSH on some Linux distributions.\n\nIt was caught almost by accident. A Microsoft engineer, Andres Freund, noticed SSH logins taking slightly longer than they should and kept digging.\n\nThe lesson for me is that supply chain security is a people problem as much as a code problem. Critical projects are often maintained by one or two volunteers who are burned out. Attackers know that. Supporting maintainers and checking what actually ships in release artifacts matters as much as scanning code.",
+      "tags": [
+        "supply-chain",
+        "open-source",
+        "Linux"
+      ],
+      "lastUpdated": "2025-12-10"
+    },
+    {
+      "title": "Home lab goals for 2026",
+      "date": "2026-01-14",
+      "preview": "What I want to build this year",
+      "content": "New year, new list of things to break on purpose. A home lab is the best way I know to learn security, because you can make mistakes without anyone getting hurt.\n\nOn my list for this year:\n- A proper segmented network with separate VLANs for lab, personal, and IoT devices.\n- A small SIEM to collect logs from everything and practice writing detections.\n- A deliberately vulnerable Active Directory setup to practice attacks and then the matching defenses.\n- Better documentation, so I can rebuild everything from notes instead of memory.\n\nThe goal is not perfect infrastructure. It is understanding why each piece exists and what happens when it is missing.",
+      "tags": [
+        "homelab",
+        "goals",
+        "learning"
+      ],
+      "lastUpdated": "2026-01-14"
+    },
+    {
+      "title": "Hashing vs encryption vs encoding",
+      "date": "2026-02-11",
+      "preview": "Three words people mix up constantly",
+      "content": "These three get confused all the time, so here is how I keep them straight.\n\nEncoding changes the format of data so it can be stored or sent, like Base64. It is not security at all. Anyone can decode it.\n\nEncryption scrambles data with a key so only someone with the right key can read it. It is reversible on purpose. Use it when you need the original data back, like files or network traffic.\n\nHashing turns data into a fixed-length fingerprint and is designed to be one-way. Use it when you only need to check that something matches, like passwords. Password hashes should use slow, salted algorithms like bcrypt or Argon2, not fast ones like MD5 or plain SHA-256.\n\nIf someone says a password is \"encrypted in Base64,\" something has gone very wrong.",
+      "tags": [
+        "cryptography",
+        "hashing",
+        "basics"
+      ],
+      "lastUpdated": "2026-02-11"
     },
     {
       "title": "New notes app",
@@ -102,6 +234,54 @@
         "Race-Condition"
       ],
       "lastUpdated": "2026-05-28"
+    },
+    {
+      "title": "Zero trust without the buzzwords",
+      "date": "2026-06-16",
+      "preview": "Never trust, always verify",
+      "content": "Zero trust gets used as a marketing term so often that it has started to sound meaningless. The core idea is simple, though.\n\nThe old model treated the internal network like a castle: once you were inside the walls, you were trusted. Zero trust drops that assumption. Every request is checked based on who you are, what device you are on, and what you are trying to reach, no matter where on the network it comes from.\n\nIn practice that means strong identity and MFA, checking device health, giving each person the smallest access they need, and segmenting the network so one compromised machine cannot reach everything. You do not buy zero trust in a box. You move toward it one control at a time.",
+      "tags": [
+        "zero-trust",
+        "architecture",
+        "security"
+      ],
+      "lastUpdated": "2026-06-16"
+    },
+    {
+      "title": "If it isn't logged, it didn't happen",
+      "date": "2026-07-15",
+      "preview": "Why logging is the unglamorous core of security",
+      "content": "When something goes wrong, the first question is always what happened. Without logs, the honest answer is that nobody knows.\n\nGood logging means collecting authentication events, admin actions, firewall decisions, and DNS queries in one central place, with accurate timestamps and enough retention to look back weeks later. Logs that live only on the machine that got compromised are not much help, because an attacker can delete them.\n\nThe hard part is not collecting logs but making them useful. Too many alerts and people start ignoring them. I would rather have a few high-quality detections someone actually reads than thousands of alerts nobody looks at.",
+      "tags": [
+        "logging",
+        "SIEM",
+        "incident-response"
+      ],
+      "lastUpdated": "2026-07-15"
+    },
+    {
+      "title": "The 3-2-1 backup rule",
+      "date": "2026-08-12",
+      "preview": "Backups only count if you can restore them",
+      "content": "Ransomware made backups a security topic, not just an IT chore. The classic rule still holds up:\n\n3 copies of your data,\non 2 different types of storage,\nwith 1 copy offsite.\n\nModern ransomware goes after backups first, so I would add one more rule: at least one copy should be offline or immutable, so it cannot be changed even by an account with admin rights.\n\nAnd the most important part: test your restores. A backup you have never restored is only a hope. Pick a file, a folder, or a whole system, and actually bring it back. Finding out your backups were broken during a real incident is the worst time to learn it.",
+      "tags": [
+        "backups",
+        "ransomware",
+        "resilience"
+      ],
+      "lastUpdated": "2026-08-12"
+    },
+    {
+      "title": "Hardening SSH in five minutes",
+      "date": "2026-09-16",
+      "preview": "Small config changes that close big doors",
+      "content": "Any server with SSH open to the internet starts getting brute-force attempts within minutes. A few changes in /etc/ssh/sshd_config cut most of that risk:\n\nPermitRootLogin no\nPasswordAuthentication no\nPubkeyAuthentication yes\nMaxAuthTries 3\nAllowUsers yourusername\n\nSet up key-based login and confirm it works before turning off passwords, or you will lock yourself out. Generate a modern key with ssh-keygen -t ed25519.\n\nAfter that, add something like fail2ban to block repeat offenders, and if possible only expose SSH through a VPN or a firewall allowlist. Restart the service with systemctl restart sshd and test from a second session before closing the first one.",
+      "tags": [
+        "SSH",
+        "Linux",
+        "hardening"
+      ],
+      "lastUpdated": "2026-09-16"
     }
   ]
 }
