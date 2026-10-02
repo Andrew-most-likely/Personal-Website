@@ -72,11 +72,26 @@ function formatRelativeDate(dateString) {
   return `${Math.floor(diff / 365)}y ago`;
 }
 
-function createRepoCard(repo) {
+function prettyRepoName(name) {
+  return name.replace(/[-_]+/g, ' ');
+}
+
+// Repos without a screenshot get a stitched teal cover in the site's palette
+function createRepoCover(repo) {
+  const lang = repo.language ? `<span class="repo-cover-lang">${escapeHTML(repo.language)}</span>` : '';
+  return `
+    <div class="repo-cover" aria-hidden="true">
+      <span class="repo-cover-bloom"></span>
+      <span class="repo-cover-title">${escapeHTML(prettyRepoName(repo.name))}</span>
+      ${lang}
+    </div>`;
+}
+
+function createRepoCard(repo, images) {
   const color  = LANG_COLORS[repo.language] || '#7A7570';
   const lang   = repo.language ? `
     <span class="repo-lang">
-      <span class="lang-dot" style="background:${color}"></span>${repo.language}
+      <span class="lang-dot" style="background:${color}"></span>${escapeHTML(repo.language)}
     </span>` : '';
 
   const stars  = repo.stargazers_count > 0
@@ -87,16 +102,24 @@ function createRepoCard(repo) {
     ? `<p class="repo-description">${escapeHTML(repo.description)}</p>`
     : `<p class="repo-description repo-no-desc">No description provided.</p>`;
 
+  const image = images[repo.name];
+  const media = image
+    ? `<img src="${image}" alt="" loading="lazy" width="960" height="600">`
+    : createRepoCover(repo);
+
   return `
     <a class="repo-card" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-      <div class="repo-card-header">
-        <span class="repo-name"><i data-lucide="book-marked"></i>${escapeHTML(repo.name)}</span>
-        ${lang}
-      </div>
-      ${desc}
-      <div class="repo-meta">
-        ${stars}${forks}
-        <span class="repo-updated">Updated ${formatRelativeDate(repo.updated_at)}</span>
+      <div class="repo-media">${media}</div>
+      <div class="repo-body">
+        <div class="repo-card-header">
+          <span class="repo-name"><i data-lucide="book-marked"></i>${escapeHTML(repo.name)}</span>
+          ${lang}
+        </div>
+        ${desc}
+        <div class="repo-meta">
+          ${stars}${forks}
+          <span class="repo-updated">Updated ${formatRelativeDate(repo.updated_at)}</span>
+        </div>
       </div>
     </a>
   `;
@@ -110,12 +133,15 @@ async function loadRepos() {
   grid.innerHTML = '<p class="repo-loading">Loading repositories…</p>';
 
   try {
-    const res  = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
+    const [res, images] = await Promise.all([
+      fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`),
+      fetch('../JSON/repo-images.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),
+    ]);
     if (!res.ok) throw new Error(res.status);
 
     const repos = await res.json();
     const filtered = repos
-      .filter(r => !r.fork)
+      .filter(r => !r.fork && r.name !== GITHUB_USER)
       .sort((a, b) => b.stargazers_count - a.stargazers_count
                    || new Date(b.updated_at) - new Date(a.updated_at));
 
@@ -124,7 +150,7 @@ async function loadRepos() {
       return;
     }
 
-    grid.innerHTML = filtered.map(createRepoCard).join('');
+    grid.innerHTML = filtered.map(repo => createRepoCard(repo, images)).join('');
 
     if (typeof lucide !== 'undefined') lucide.createIcons();
 

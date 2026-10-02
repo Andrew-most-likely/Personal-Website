@@ -78,7 +78,7 @@
 /* ── GitHub repo cards ────────────────────────────────────── */
 .repos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -87,18 +87,92 @@
   outline-offset: -6px;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  padding: 1.15rem 1.25rem;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: 12px;
+  overflow: hidden;
   text-decoration: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
 
 .repo-card:hover {
   border-color: var(--c-border-hi);
   box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.repo-media {
+  margin: 9px 9px 0;
+  aspect-ratio: 16 / 10;
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--c-surface-2);
+}
+
+.repo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.repo-card:hover .repo-media img { transform: scale(1.03); }
+
+.repo-cover {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 1.1rem 1.2rem;
+  background-color: var(--accent);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.16) 1.2px, transparent 1.7px);
+  background-size: 13px 13px;
+  background-position: 6px 6px;
+  outline: 1.5px dashed var(--stitch-on-accent);
+  outline-offset: -7px;
+  border-radius: 7px;
+  color: var(--on-accent);
+}
+
+.repo-cover-bloom {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, var(--gold) 0 13%, var(--bloom) 14% 27%, var(--bloom-2) 28%);
+  -webkit-mask: var(--bloom-mask) center / contain no-repeat;
+          mask: var(--bloom-mask) center / contain no-repeat;
+}
+
+.repo-cover-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.15;
+  text-transform: capitalize;
+}
+
+.repo-cover-lang {
+  align-self: flex-start;
+  padding: 0.15rem 0.55rem;
+  background: var(--suede);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c-heading);
+}
+
+.repo-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.55rem;
+  padding: 0.95rem 1.2rem 1.15rem;
 }
 
 .repo-card-header {
