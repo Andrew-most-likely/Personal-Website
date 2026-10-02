@@ -347,3 +347,15 @@
   font-size: 0.9rem;
   color: var(--c-body);
 }
+
+.guide-updated {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--c-muted);
+}
+
+.guide-step a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}

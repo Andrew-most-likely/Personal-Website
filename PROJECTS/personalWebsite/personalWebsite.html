@@ -62,17 +62,18 @@
             <header class="page-header">
                 <p class="page-header-label"><a href="../../HTML/projects.html">Projects</a> / Guide</p>
                 <h1>Build a Personal Website</h1>
-                <p class="page-header-lede">A clear overview of creating and hosting your own personal website. This guide uses Visual Studio Code. A custom domain and Cloudflare are optional.</p>
+                <p class="page-header-lede">Create a personal website and host it for free with GitHub Pages, then optionally put it on your own domain through Cloudflare. This guide uses Visual Studio Code and needs no frameworks or build tools.</p>
+                <p class="guide-updated">Last reviewed October 2026</p>
             </header>
 
             <section class="section">
                 <h2 class="section-heading">Requirements</h2>
                 <ul class="guide-reqs">
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/">GitHub account</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/">Git</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">An IDE such as VS Code</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/signup">GitHub account</a> (free)</li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/downloads">Git</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">Visual Studio Code</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.cloudflare.com/">Cloudflare account</a> (optional)</li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.namecheap.com/">Domain registrar</a> (optional)</li>
+                    <li>A domain registrar (optional)</li>
                 </ul>
             </section>
 
@@ -82,40 +83,45 @@
                 <section class="guide-step">
                     <h2><span class="guide-num">01</span>Create a GitHub Repository</h2>
                     <ol>
-                        <li>Log in to your GitHub account.</li>
-                        <li>Click the "+" icon in the top right corner of the page and select "New repository."</li>
-                        <li>Enter a name for your repository, such as <strong>"personal-website"</strong>.</li>
-                        <li>Select the readme box to add a ReadMe to your repository.</li>
-                        <li>Make sure to set your repository to <strong>public</strong>.</li>
-                        <li>Click <strong>"Create repository"</strong>.</li>
+                        <li>Sign in to GitHub.</li>
+                        <li>Click the <strong>+</strong> menu in the top-right corner and choose <strong>New repository</strong>.</li>
+                        <li>Name the repository. If you name it <strong>yourusername.github.io</strong>, your site is served from <code>https://yourusername.github.io</code>. Any other name, such as <strong>personal-website</strong>, is served from <code>https://yourusername.github.io/personal-website</code>.</li>
+                        <li>Set the visibility to <strong>Public</strong>. On a free GitHub plan, Pages only works for public repositories.</li>
+                        <li>Turn on <strong>Add README</strong> so the repository starts with a first commit.</li>
+                        <li>Click <strong>Create repository</strong>.</li>
                     </ol>
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">02</span>Install Git</h2>
+                    <h2><span class="guide-num">02</span>Install and Configure Git</h2>
                     <ol>
-                        <li>Install Git, then open Git Bash.</li>
-                        <li>Run the following commands:
+                        <li>Install Git:
+                            <ul>
+                                <li><strong>Windows:</strong> download the installer from <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/downloads">git-scm.com</a>, or run <code>winget install --id Git.Git -e</code>. The installer includes Git Bash.</li>
+                                <li><strong>macOS:</strong> run <code>xcode-select --install</code>, or <code>brew install git</code> if you use Homebrew.</li>
+                                <li><strong>Linux:</strong> use your package manager, for example <code>sudo apt install git</code> or <code>sudo dnf install git</code>.</li>
+                            </ul>
+                        </li>
+                        <li>Open a terminal (Git Bash on Windows) and set your name and email. Use the email on your GitHub account, or your GitHub <strong>noreply</strong> address if you keep your email private:
                             <ul>
                                 <li><code>git config --global user.name "Your Name"</code></li>
-                                <li><code>git config --global user.email "Your Email"</code></li>
-                                <li>Close Git Bash.</li>
+                                <li><code>git config --global user.email "you@example.com"</code></li>
                             </ul>
                         </li>
                     </ol>
+                    <p class="guide-note">If you turned on "Keep my email addresses private" in GitHub, pushes that use your real email are rejected. Find your noreply address under GitHub <strong>Settings → Emails</strong>.</p>
                 </section>
 
                 <section class="guide-step">
                     <h2><span class="guide-num">03</span>Clone Your Repository</h2>
                     <ol>
-                        <li>Open your IDE (this guide uses <strong>VS Code</strong>).</li>
-                        <li>Select the Accounts icon in the bottom left and sign in to your GitHub account.</li>
-                        <li>Press <strong>Ctrl + Shift + E</strong> or select the page icon.</li>
-                        <li>Click the <strong>"Clone Repository"</strong> button.
+                        <li>Open VS Code.</li>
+                        <li>Click the <strong>Accounts</strong> icon at the bottom of the Activity Bar on the left and sign in with GitHub.</li>
+                        <li>Open the Explorer with <strong>Ctrl + Shift + E</strong> (<strong>Cmd + Shift + E</strong> on macOS) and click <strong>Clone Repository</strong>. You can also open the Command Palette and run <strong>Git: Clone</strong>.
                             <ul>
-                                <li>Either enter the URL of your repository, or select your repository from the dropdown.</li>
-                                <li>Choose a location to save your repository.</li>
-                                <li>Click <strong>"Clone"</strong>.</li>
+                                <li>Choose <strong>Clone from GitHub</strong> and pick your repository, or paste its URL.</li>
+                                <li>Choose a folder to save it in.</li>
+                                <li>Click <strong>Open</strong> when VS Code asks whether to open the cloned repository.</li>
                             </ul>
                         </li>
                     </ol>
@@ -124,10 +130,9 @@
                 <section class="guide-step">
                     <h2><span class="guide-num">04</span>Create Your Website</h2>
                     <ol>
-                        <li>Right-click on your repository in the explorer.</li>
-                        <li>Select <strong>"New File"</strong>.</li>
-                        <li>Enter <strong>"index.html"</strong> as the file name.</li>
-                        <li>Enter the following code into your file:
+                        <li>In the Explorer, click the <strong>New File</strong> icon, or right-click an empty area and choose <strong>New File</strong>.</li>
+                        <li>Name the file <strong>index.html</strong>. GitHub Pages serves this file as your home page.</li>
+                        <li>Add the following code and save the file:
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -144,64 +149,57 @@
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">05</span>Push Your Changes</h2>
+                    <h2><span class="guide-num">05</span>Commit and Push Your Changes</h2>
                     <ol>
-                        <li>Press <strong>Ctrl + Shift + G</strong> or select <strong>Source Control</strong>.</li>
-                        <li>Enter a commit message.</li>
-                        <li>Press the Plus Icon in the changes list.</li>
-                        <li>Press the commit button to commit your changes.</li>
-                        <li>Finally, <strong>Sync Changes</strong>.</li>
+                        <li>Open Source Control with <strong>Ctrl + Shift + G</strong> (<strong>Cmd + Shift + G</strong> on macOS).</li>
+                        <li>Click the <strong>+</strong> next to your changes to stage them.</li>
+                        <li>Type a commit message, such as <em>Add home page</em>.</li>
+                        <li>Click <strong>Commit</strong>.</li>
+                        <li>Click <strong>Sync Changes</strong> to push your commit to GitHub.</li>
                     </ol>
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">06</span>Set up GitHub Pages</h2>
+                    <h2><span class="guide-num">06</span>Turn On GitHub Pages</h2>
                     <ol>
-                        <li>Go to your repository on GitHub.</li>
-                        <li>Click on the <strong>"Settings"</strong> tab.</li>
-                        <li>Select <strong>"GitHub Pages"</strong> in the left-side actions list called <strong>"Code and automation"</strong>.</li>
-                        <li>Under "Source", select <strong>"main" or "master"</strong> branch.</li>
-                        <li>Click <strong>"Save"</strong>.</li>
-                        <li>After a few minutes, your website will be live at <strong>https://yourusername.github.io/yourrepositoryname</strong>.</li>
+                        <li>Open your repository on GitHub and click the <strong>Settings</strong> tab.</li>
+                        <li>In the left sidebar, under <strong>Code and automation</strong>, click <strong>Pages</strong>.</li>
+                        <li>Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <strong>Deploy from a branch</strong>.</li>
+                        <li>Under <strong>Branch</strong>, choose <strong>main</strong> and the <strong>/ (root)</strong> folder, then click <strong>Save</strong>.</li>
+                        <li>Wait a minute or two. Refresh the Pages settings and click <strong>Visit site</strong> when the link appears. You can follow the deployment under the repository's <strong>Actions</strong> tab.</li>
                     </ol>
+                    <p class="guide-note">Every push to <strong>main</strong> now redeploys your site automatically.</p>
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">07</span>Purchase a Domain Name <span class="guide-optional">Optional</span></h2>
+                    <h2><span class="guide-num">07</span>Buy a Domain Name <span class="guide-optional">Optional</span></h2>
                     <ol>
-                        <li>Go to a domain registrar such as <strong>Namecheap</strong>.</li>
-                        <li>Search for your desired domain name.</li>
-                        <li>Click <strong>"Add to Cart"</strong> and complete the purchase process.</li>
-                        <li>Go to your domain registrar's <strong>DNS settings</strong>.</li>
-                        <li>Under name server, select <strong>custom DNS</strong>.</li>
-                        <li>Enter the nameservers provided by your hosting provider.</li>
-                        <li>Wait for the DNS changes to propagate (this can take up to <strong>48 hours</strong>).</li>
-                        <li>Your website will now be live at your custom domain name.</li>
+                        <li>Go to a domain registrar such as <strong>Cloudflare Registrar</strong>, <strong>Porkbun</strong>, or <strong>Namecheap</strong>.</li>
+                        <li>Search for the domain you want.</li>
+                        <li>Purchase it. Compare the renewal price as well as the first-year price, since they often differ.</li>
                     </ol>
+                    <p class="guide-note">If you buy the domain through Cloudflare Registrar, it already uses Cloudflare's nameservers, so you can skip to step 09.</p>
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">08</span>Set up a Custom Domain with Cloudflare <span class="guide-optional">Optional</span></h2>
+                    <h2><span class="guide-num">08</span>Move Your Domain's DNS to Cloudflare <span class="guide-optional">Optional</span></h2>
                     <ol>
-                        <li>Go to Cloudflare and create an account.</li>
-                        <li>Click on <strong>"Add a site"</strong> and enter your domain name.</li>
-                        <li>Click <strong>"Add site"</strong>.</li>
-                        <li>Cloudflare will scan your DNS records.</li>
-                        <li>Click <strong>"Continue"</strong>.</li>
-                        <li>Choose a plan (Free is fine for most users).</li>
-                        <li>Click <strong>"Continue"</strong>.</li>
-                        <li>Cloudflare will provide you with two nameservers.</li>
-                        <li>Go to your domain registrar and update your nameservers to the ones provided by Cloudflare.</li>
-                        <li>Go back to Cloudflare and click <strong>"Done"</strong>.</li>
+                        <li>Create a free Cloudflare account and sign in to the dashboard.</li>
+                        <li>Choose to add (onboard) a domain, then enter your domain name.</li>
+                        <li>Let Cloudflare scan for existing DNS records and review what it finds.</li>
+                        <li>Select the <strong>Free</strong> plan.</li>
+                        <li>Cloudflare shows you two nameservers. Copy them.</li>
+                        <li>At your registrar, open the domain's nameserver settings, choose <strong>custom nameservers</strong>, and replace the existing ones with Cloudflare's two.</li>
+                        <li>Back in Cloudflare, continue and click <strong>Check nameservers</strong>. Cloudflare emails you when the domain is active.</li>
                     </ol>
+                    <p class="guide-note">Nameserver changes often finish within an hour, but can take up to 24 to 48 hours.</p>
                 </section>
 
                 <section class="guide-step">
-                    <h2><span class="guide-num">09</span>Finish Your Custom Domain <span class="guide-optional">Optional</span></h2>
+                    <h2><span class="guide-num">09</span>Connect Your Domain to GitHub Pages <span class="guide-optional">Optional</span></h2>
                     <ol>
-                        <li>Go to Cloudflare and click on the <strong>"DNS"</strong> tab.</li>
-                        <li>Click <strong>"Add record"</strong>.</li>
-                        <li>Create an A record for each of the following IP addresses:
+                        <li>In Cloudflare, open your domain and go to <strong>DNS → Records</strong>.</li>
+                        <li>Add four <strong>A</strong> records with the name <strong>@</strong> (your root domain), one for each GitHub Pages IP address:
                             <ul>
                                 <li><code>185.199.108.153</code></li>
                                 <li><code>185.199.109.153</code></li>
@@ -209,14 +207,14 @@
                                 <li><code>185.199.111.153</code></li>
                             </ul>
                         </li>
-                        <li>Click <strong>"Save"</strong>.</li>
-                        <li>Click <strong>"Add record"</strong> again.</li>
-                        <li>Make sure the type is <strong>CNAME</strong>, name is "www", and value is your custom domain.</li>
-                        <li>Click <strong>"Save"</strong>.</li>
-                        <li>Go back to GitHub Pages settings and find <strong>"Custom domain"</strong>.</li>
-                        <li>Enter your custom domain name and click <strong>"Save"</strong>.</li>
+                        <li>Optionally, add four <strong>AAAA</strong> records for IPv6: <code>2606:50c0:8000::153</code>, <code>2606:50c0:8001::153</code>, <code>2606:50c0:8002::153</code>, and <code>2606:50c0:8003::153</code>.</li>
+                        <li>Add a <strong>CNAME</strong> record with the name <strong>www</strong> and the target <strong>yourusername.github.io</strong>. Use your GitHub Pages address here, not your custom domain.</li>
+                        <li>Set the proxy status on these records to <strong>DNS only</strong> (grey cloud) for now, so GitHub can issue your HTTPS certificate.</li>
+                        <li>In your repository, go to <strong>Settings → Pages</strong>, enter your domain under <strong>Custom domain</strong>, and click <strong>Save</strong>. GitHub runs a DNS check.</li>
+                        <li>Once the certificate is ready, tick <strong>Enforce HTTPS</strong>.</li>
+                        <li>To prevent domain takeovers, verify the domain under your GitHub profile's <strong>Settings → Pages</strong> by adding the TXT record GitHub gives you.</li>
                     </ol>
-                    <p class="guide-note">DNS changes can take up to 48 hours to fully propagate.</p>
+                    <p class="guide-note">The HTTPS certificate can take up to 24 hours to issue. If you later turn on Cloudflare's proxy (orange cloud), set Cloudflare's <strong>SSL/TLS</strong> mode to <strong>Full</strong> to avoid redirect loops.</p>
                 </section>
 
             </section>
