@@ -5,278 +5,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Meta Tags for SEO -->
-    <meta name="description"
-        content="Explore Andrew Cappelli's personal portfolio website project. Learn about his journey in designing, developing, and showcasing his skills through a custom-built website.">
-    <meta name="keywords"
-        content="Andrew Cappelli, Personal Portfolio, Web Development, Frontend Design, Software Development, HTML, CSS, JavaScript, Tech, Programming">
+    <title>Build a Personal Website · Andrew Cappelli</title>
+    <meta name="description" content="A step-by-step guide to building and hosting a personal website with GitHub Pages and Cloudflare.">
     <meta name="author" content="Andrew Cappelli">
+    <link rel="canonical" href="https://cappel.li/PROJECTS/personalWebsite/personalWebsite.html">
+    <meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
 
-    <!-- Open Graph Meta Tags for Social Media Sharing -->
-    <meta property="og:title" content="Personal Portfolio Website | Andrew Cappelli">
-    <meta property="og:description"
-        content="Take a look at Andrew Cappelli's portfolio website project, a showcase of his skills in web development, design, and technical creativity.">
-    <meta property="og:image" content="../../ASSETS/IMAGES/portfolio-preview.webp">
-    <meta property="og:url" content="https://cappel.li/HTML/portfolio.html">
+    <meta property="og:title" content="Build a Personal Website · Andrew Cappelli">
+    <meta property="og:description" content="A step-by-step guide to building and hosting a personal website with GitHub Pages and Cloudflare.">
+    <meta property="og:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
+    <meta property="og:url" content="https://cappel.li/PROJECTS/personalWebsite/personalWebsite.html">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags for Twitter Sharing -->
-    <meta name="twitter:title" content="Personal Portfolio Website | Andrew Cappelli">
-    <meta name="twitter:description"
-        content="Check out Andrew Cappelli's personal portfolio website project, a custom-built site highlighting his web development and design skills.">
-    <meta name="twitter:image" content="../../ASSETS/IMAGES/portfolio-preview.webp">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Build a Personal Website · Andrew Cappelli">
+    <meta name="twitter:description" content="A step-by-step guide to building and hosting a personal website with GitHub Pages and Cloudflare.">
+    <meta name="twitter:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
 
-    <!-- Title Tag -->
-    <title>Projects | Andrew Cappelli</title>
-
-    <!-- External Stylesheet Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
     <link rel="stylesheet" href="../../CSS/main.css">
-    <link rel="stylesheet" href="../../CSS/responsive.css">
     <link rel="stylesheet" href="../../CSS/project.css">
-    <!-- Favicon -->
+    <link rel="stylesheet" href="../../CSS/responsive.css">
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-        <!-- github star button-->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <style>
-        p {
-            padding: 0 20px;
-        }
-        ol {
-            margin-left: 40px;
-            margin-bottom: 20px;
-        }
-        li {
-            margin: 10px 0;
-        }
-        pre {
-            padding: 10px;
-            border-radius: 5px;
-            margin-left: -299px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        ul {
-            margin-left: 20px;
-            list-style-type: square;
-        }
-
-        .note {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            padding: 10px;
-            margin: 15px 0;
-            border-radius: 5px;
-            color: #856404;
-
-        }
-        .highlight {
-            color: #4b5361;
-            font-weight: bold;
-        }
-        .column-page {
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-    </style>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JXN7H7HY6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5JXN7H7HY6');
+    </script>
+</head>
 
 <body>
-    <nav>
-        <ul>
-            <li style="margin: initial";><a href="../../index.html">About</a></li>
-            <li style="margin: initial";><a href="../../HTML/projects.html">Projects</a></li>
-            <li style="margin: initial";><a href="../../HTML/notes.html">Notes</a></li>
-        </ul>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="../../index.html" aria-label="Andrew Cappelli, home"><span class="bloom" aria-hidden="true"></span><span class="nav-brand-text">Andrew Cappelli</span></a>
+            <ul>
+                <li><a href="../../index.html">About</a></li>
+                <li><a href="../../HTML/projects.html" class="nav-active">Projects</a></li>
+                <li><a href="../../HTML/notes.html">Notes</a></li>
+                <li><a href="../../index.html#resume" class="nav-cta">Resume</a></li>
+            </ul>
+        </div>
     </nav>
-    <div class="column-page">
-        <div class="container">
-            <div class="BIG-OL-TITLE">
-                <h1>Create a Personal Website</h1>
-            </div>
-            <section class="title-section">
+
+    <main id="main" class="column-page">
+        <div class="container guide">
+
+            <header class="page-header">
+                <p class="page-header-label"><a href="../../HTML/projects.html">Projects</a> / Guide</p>
+                <h1>Build a Personal Website</h1>
+                <p class="page-header-lede">A clear overview of creating and hosting your own personal website. This guide uses Visual Studio Code. A custom domain and Cloudflare are optional.</p>
+            </header>
+
+            <section class="section">
+                <h2 class="section-heading">Requirements</h2>
+                <ul class="guide-reqs">
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/">GitHub account</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/">Git</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">An IDE such as VS Code</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.cloudflare.com/">Cloudflare account</a> (optional)</li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.namecheap.com/">Domain registrar</a> (optional)</li>
+                </ul>
             </section>
 
             <section class="section">
-                <p>This guide aims to provide a clear and insightful overview of creating and hosting your own personal
-                    website. A condition of this tutorial is the use of VSC or visual studio code. Adittionally the use
-                    of a domain name and cloudflare is optional.</p>
-            </section>
+                <h2 class="section-heading">Steps</h2>
 
-            <section id="ProjectSection" class="section projects-grid">
-
-                <h1>Rquirements</h1>
-
-                <div class="project-nav">
-                    <ul>
-                        <li><a target="_blank" href="https://github.com/">GitHub Account</a></li>
-                        <li><a target="_blank" href="https://www.cloudflare.com/">Cloudflare Account</a></li>
-                        <li><a target="_blank" href="https://www.namecheap.com/">Domain Registrar</a></li>
-                        <li><a target="_blank"
-                                href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE of your
-                                choice</a></li>
-                        <li><a target="_blank" href="https://git-scm.com/">Git</a></li>
-                    </ul>
-                </div>
-                <h1>Step 1: Create a GitHub Repository</h1>
-                <div class="step">
+                <section class="guide-step">
+                    <h2><span class="guide-num">01</span>Create a GitHub Repository</h2>
                     <ol>
                         <li>Log in to your GitHub account.</li>
                         <li>Click the "+" icon in the top right corner of the page and select "New repository."</li>
-                        <li>Enter a name for your repository, such as <span class="highlight">"personal-website"</span>.</li>
+                        <li>Enter a name for your repository, such as <strong>"personal-website"</strong>.</li>
                         <li>Select the readme box to add a ReadMe to your repository.</li>
-                        <li>Make sure to set your repository to <span class="highlight">public</span>.</li>
-                        <li>Click <span class="highlight">"Create repository"</span>.</li>
+                        <li>Make sure to set your repository to <strong>public</strong>.</li>
+                        <li>Click <strong>"Create repository"</strong>.</li>
                     </ol>
-                </div>
-            
-                <h1>Step 2: Install git</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">02</span>Install Git</h2>
                     <ol>
-                        <li>Once you've installed, run Git Bash</li>
+                        <li>Install Git, then open Git Bash.</li>
                         <li>Run the following commands:
                             <ul>
                                 <li><code>git config --global user.name "Your Name"</code></li>
                                 <li><code>git config --global user.email "Your Email"</code></li>
-                                <li>Close Git Bash</li>
+                                <li>Close Git Bash.</li>
                             </ul>
                         </li>
                     </ol>
-                </div>
-            
-                <h1>Step 3: Clone your repository</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">03</span>Clone Your Repository</h2>
                     <ol>
-                        <li>Open Your IDE (we're using <span class="highlight">VSC</span>)</li>
+                        <li>Open your IDE (this guide uses <strong>VS Code</strong>).</li>
                         <li>Select the Accounts icon in the bottom left and sign in to your GitHub account.</li>
-                        <li>Press <span class="highlight">Ctrl + Shift + E</span> or select the page icon.</li>
-                        <li>Click the <span class="highlight">"Clone Repository"</span> button.</li>
-                        <ul>
-                            <li>Either Enter the URL of your repository, or select your repository from the dropdown.</li>
-                            <li>Choose a location to save your repository.</li>
-                            <li>Click <span class="highlight">"Clone"</span>.</li>
-                        </ul>
+                        <li>Press <strong>Ctrl + Shift + E</strong> or select the page icon.</li>
+                        <li>Click the <strong>"Clone Repository"</strong> button.
+                            <ul>
+                                <li>Either enter the URL of your repository, or select your repository from the dropdown.</li>
+                                <li>Choose a location to save your repository.</li>
+                                <li>Click <strong>"Clone"</strong>.</li>
+                            </ul>
+                        </li>
                     </ol>
-                </div>
-            
-                <h1>Step 4: Create your website</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">04</span>Create Your Website</h2>
                     <ol>
                         <li>Right-click on your repository in the explorer.</li>
-                        <li>Select <span class="highlight">"New File"</span>.</li>
-                        <li>Enter <span class="highlight">"index.html"</span> as the file name.</li>
-                        <li>Enter the following code into your file:</li>
-                        <pre>
-                            <code>
-                                &lt;!DOCTYPE html&gt;
-                                &lt;html lang="en"&gt;
-                                    &lt;head&gt;
-                                        &lt;meta charset="UTF-8"&gt;
-                                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                                        &lt;title&gt;My Personal Website&lt;/title&gt;
-                                    &lt;/head&gt;
-                                    &lt;body&gt;
-                                        &lt;h1&gt;Welcome to My Personal Website!&lt;/h1&gt;
-                                    &lt;/body&gt;
-                                &lt;/html&gt;
-                            </code>
-                        </pre>
+                        <li>Select <strong>"New File"</strong>.</li>
+                        <li>Enter <strong>"index.html"</strong> as the file name.</li>
+                        <li>Enter the following code into your file:
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Personal Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My Personal Website!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </li>
                     </ol>
-                </div>
-            
-                <h1>Step 5: Push your changes</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">05</span>Push Your Changes</h2>
                     <ol>
-                        <li>Press <span class="highlight">Ctrl + Shift + G</span> or select <span class="highlight">Source Control</span>.</li>
+                        <li>Press <strong>Ctrl + Shift + G</strong> or select <strong>Source Control</strong>.</li>
                         <li>Enter a commit message.</li>
                         <li>Press the Plus Icon in the changes list.</li>
                         <li>Press the commit button to commit your changes.</li>
-                        <li>Finally, <span class="highlight">Sync Changes</span>.</li>
+                        <li>Finally, <strong>Sync Changes</strong>.</li>
                     </ol>
-                </div>
-            
-                <h1>Step 6: Setup GitHub Pages</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">06</span>Set up GitHub Pages</h2>
                     <ol>
                         <li>Go to your repository on GitHub.</li>
-                        <li>Click on the <span class="highlight">"Settings"</span> tab.</li>
-                        <li>Select <span class="highlight">"GitHub Pages"</span> in the left-side actions list called <span class="highlight">"Code and automation"</span>.</li>
-                        <li>Under "Source", select <span class="highlight">"main" or "master"</span> branch.</li>
-                        <li>Click <span class="highlight">"Save"</span>.</li>
-                        <li>After a few minutes, your website will be live at <span class="highlight">https://yourusername.github.io/yourrepositoryname</span>.</li>
+                        <li>Click on the <strong>"Settings"</strong> tab.</li>
+                        <li>Select <strong>"GitHub Pages"</strong> in the left-side actions list called <strong>"Code and automation"</strong>.</li>
+                        <li>Under "Source", select <strong>"main" or "master"</strong> branch.</li>
+                        <li>Click <strong>"Save"</strong>.</li>
+                        <li>After a few minutes, your website will be live at <strong>https://yourusername.github.io/yourrepositoryname</strong>.</li>
                     </ol>
-                </div>
-            
-                <h1>Step 7: Optional - Purchase a Domain Name</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">07</span>Purchase a Domain Name <span class="guide-optional">Optional</span></h2>
                     <ol>
-                        <li>Go to a domain registrar such as <span class="highlight">Namecheap</span>.</li>
+                        <li>Go to a domain registrar such as <strong>Namecheap</strong>.</li>
                         <li>Search for your desired domain name.</li>
-                        <li>Click <span class="highlight">"Add to Cart"</span> and complete the purchase process.</li>
-                        <li>Go to your domain registrar's <span class="highlight">DNS settings</span>.</li>
-                        <li>Under name server, select <span class="highlight">custom DNS</span>.</li>
+                        <li>Click <strong>"Add to Cart"</strong> and complete the purchase process.</li>
+                        <li>Go to your domain registrar's <strong>DNS settings</strong>.</li>
+                        <li>Under name server, select <strong>custom DNS</strong>.</li>
                         <li>Enter the nameservers provided by your hosting provider.</li>
-                        <li>Wait for the DNS changes to propagate (this can take up to <span class="highlight">48 hours</span>).</li>
+                        <li>Wait for the DNS changes to propagate (this can take up to <strong>48 hours</strong>).</li>
                         <li>Your website will now be live at your custom domain name.</li>
                     </ol>
-                </div>
-            
-                <h1>Step 8: Optional - Setup a Custom Domain with Cloudflare</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">08</span>Set up a Custom Domain with Cloudflare <span class="guide-optional">Optional</span></h2>
                     <ol>
                         <li>Go to Cloudflare and create an account.</li>
-                        <li>Click on <span class="highlight">"Add a site"</span> and enter your domain name.</li>
-                        <li>Click <span class="highlight">"Add site"</span>.</li>
+                        <li>Click on <strong>"Add a site"</strong> and enter your domain name.</li>
+                        <li>Click <strong>"Add site"</strong>.</li>
                         <li>Cloudflare will scan your DNS records.</li>
-                        <li>Click <span class="highlight">"Continue"</span>.</li>
+                        <li>Click <strong>"Continue"</strong>.</li>
                         <li>Choose a plan (Free is fine for most users).</li>
-                        <li>Click <span class="highlight">"Continue"</span>.</li>
+                        <li>Click <strong>"Continue"</strong>.</li>
                         <li>Cloudflare will provide you with two nameservers.</li>
                         <li>Go to your domain registrar and update your nameservers to the ones provided by Cloudflare.</li>
-                        <li>Go back to Cloudflare and click <span class="highlight">"Done"</span>.</li>
+                        <li>Go back to Cloudflare and click <strong>"Done"</strong>.</li>
                     </ol>
-                </div>
-            
-                <h1>Step 9: Optional - Finishing Your Custom Domain Name</h1>
-                <div class="step">
+                </section>
+
+                <section class="guide-step">
+                    <h2><span class="guide-num">09</span>Finish Your Custom Domain <span class="guide-optional">Optional</span></h2>
                     <ol>
-                        <li>Go to Cloudflare and click on the <span class="highlight">"DNS"</span> tab.</li>
-                        <li>Click <span class="highlight">"Add record"</span>.</li>
-                        <li>Create an A record for the following IP addresses:</li>
-                        <ul>
-                            <li>185.199.111.153</li>
-                            <li>185.199.110.153</li>
-                            <li>185.199.109.153</li>
-                            <li>185.199.108.153</li>
-                        </ul>
-                        <li>Click <span class="highlight">"Save"</span>.</li>
-                        <li>Click <span class="highlight">"Add record"</span> again.</li>
-                        <li>Make sure the type is <span class="highlight">CNAME</span>, name is "www", and value is your custom domain.</li>
-                        <li>Click <span class="highlight">"Save"</span>.</li>
-                        <li>Go back to GitHub Pages settings and find <span class="highlight">"Custom domain"</span>.</li>
-                        <li>Enter your custom domain name and click <span class="highlight">"Save"</span>.</li>
-                        <li style="list-style: none;"><span class="note">Note: This may take up to 48 hours for the changes to fully propagate.</span></li>
+                        <li>Go to Cloudflare and click on the <strong>"DNS"</strong> tab.</li>
+                        <li>Click <strong>"Add record"</strong>.</li>
+                        <li>Create an A record for each of the following IP addresses:
+                            <ul>
+                                <li><code>185.199.108.153</code></li>
+                                <li><code>185.199.109.153</code></li>
+                                <li><code>185.199.110.153</code></li>
+                                <li><code>185.199.111.153</code></li>
+                            </ul>
+                        </li>
+                        <li>Click <strong>"Save"</strong>.</li>
+                        <li>Click <strong>"Add record"</strong> again.</li>
+                        <li>Make sure the type is <strong>CNAME</strong>, name is "www", and value is your custom domain.</li>
+                        <li>Click <strong>"Save"</strong>.</li>
+                        <li>Go back to GitHub Pages settings and find <strong>"Custom domain"</strong>.</li>
+                        <li>Enter your custom domain name and click <strong>"Save"</strong>.</li>
                     </ol>
-                </div>
+                    <p class="guide-note">DNS changes can take up to 48 hours to fully propagate.</p>
+                </section>
+
             </section>
+
         </div>
-    </div>
-    <script src=""></script>
-    <div class="footer-div">
-        <ul class="footer-ul">
-          <li  class="footer-li"><a target="_blank" class="footer-a" href="mailto:AndrewCappelli13@gmail.com">Email</a></li>
-          <li class="footer-li"><a target="_blank" class="footer-a" href="https://www.linkedin.com/in/andrew-cappelli/">Linked-In</a></li>
-          <li class="footer-li"><a target="_blank" class="footer-a" href="https://github.com/Andrew-most-likely/">Github</a></li>
+    </main>
 
-          <li class="footer-li">
-            <p>👋</p>
-          </li>
-          <Li>
-            <a class="github-button" href="https://github.com/Andrew-most-likely/Personal-Website" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star buttons/github-buttons on GitHub">Star</a>
-          </Li>
-        </ul>
-      </div>
+    <footer class="footer-div">
+        <div class="footer-inner">
+            <p class="footer-copy"><span class="bloom" aria-hidden="true"></span>&copy; <span class="js-year">2026</span> Andrew Cappelli</p>
+            <ul class="footer-ul">
+                <li><a class="footer-a" href="mailto:andrewcappelli13@gmail.com">Email</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrew-cappelli/">LinkedIn</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://github.com/Andrew-most-likely/">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
 
+    <script src="https://unpkg.com/lucide@1.50.0/dist/umd/lucide.min.js"></script>
+    <script src="../../JS/main.js"></script>
 </body>
 
 </html>

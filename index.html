@@ -5,23 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Andrew Cappelli, cybersecurity student and developer. Explore his projects, notes, and resume.">
-    <meta name="keywords" content="Andrew Cappelli, Cyber Security, C++, Assembly, Resume, GitHub, LinkedIn">
+    <title>Andrew Cappelli · Cybersecurity &amp; IT Networking</title>
+    <meta name="description" content="Andrew Cappelli is a cybersecurity student at Johnson & Wales University and an IT networking technician. Resume, projects, and notes.">
     <meta name="author" content="Andrew Cappelli">
+    <link rel="canonical" href="https://cappel.li/">
+    <meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
 
     <meta property="og:title" content="Andrew Cappelli">
-    <meta property="og:description" content="Cybersecurity student and developer. Projects, notes, and more.">
-    <meta property="og:image" content="ASSETS/IMAGES/profile-photo1.webp">
+    <meta property="og:description" content="Cybersecurity student and IT networking technician. Resume, projects, and notes.">
+    <meta property="og:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
     <meta property="og:url" content="https://cappel.li/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
 
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Andrew Cappelli">
-    <meta name="twitter:description" content="Cybersecurity student and developer. Projects, notes, and more.">
-    <meta name="twitter:image" content="ASSETS/IMAGES/profile-photo1.webp">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Cybersecurity student and IT networking technician. Resume, projects, and notes.">
+    <meta name="twitter:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
 
-    <title>Andrew Cappelli</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andrew Cappelli",
+        "url": "https://cappel.li/",
+        "image": "https://cappel.li/ASSETS/IMAGES/profile-photo1.webp",
+        "jobTitle": "IT Networking Technician",
+        "alumniOf": "Johnson & Wales University",
+        "sameAs": [
+            "https://github.com/Andrew-most-likely",
+            "https://www.linkedin.com/in/andrew-cappelli"
+        ]
+    }
+    </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/responsive.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -38,272 +58,304 @@
 
 <body>
 
-    <div id="bg-icons" aria-hidden="true">
-        <span><i data-lucide="terminal"></i></span>
-        <span><i data-lucide="code-2"></i></span>
-        <span><i data-lucide="cpu"></i></span>
-        <span><i data-lucide="shield"></i></span>
-        <span><i data-lucide="git-branch"></i></span>
-        <span><i data-lucide="lock"></i></span>
-        <span><i data-lucide="key"></i></span>
-        <span><i data-lucide="database"></i></span>
-        <span><i data-lucide="server"></i></span>
-        <span><i data-lucide="wifi"></i></span>
-        <span><i data-lucide="bug"></i></span>
-        <span><i data-lucide="hard-drive"></i></span>
-        <span><i data-lucide="monitor"></i></span>
-        <span><i data-lucide="globe"></i></span>
-        <span><i data-lucide="hash"></i></span>
-        <span><i data-lucide="fingerprint"></i></span>
-        <span><i data-lucide="eye"></i></span>
-        <span><i data-lucide="activity"></i></span>
-        <span><i data-lucide="command"></i></span>
-        <span><i data-lucide="zap"></i></span>
-        <span><i data-lucide="layers"></i></span>
-        <span><i data-lucide="network"></i></span>
-        <span><i data-lucide="code"></i></span>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
-        <a class="nav-brand" href="index">&gt;_ ac</a>
-        <ul>
-            <li><a href="index" class="nav-active"><i data-lucide="user"></i>About</a></li>
-            <li><a href="HTML/projects.html"><i data-lucide="folder-open"></i>Projects</a></li>
-            <li><a href="HTML/notes.html"><i data-lucide="file-text"></i>Notes</a></li>
-        </ul>
+    <nav aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html" aria-label="Andrew Cappelli, home"><span class="bloom" aria-hidden="true"></span><span class="nav-brand-text">Andrew Cappelli</span></a>
+            <ul>
+                <li><a href="index.html" class="nav-active" aria-current="page">About</a></li>
+                <li><a href="HTML/projects.html">Projects</a></li>
+                <li><a href="HTML/notes.html">Notes</a></li>
+                <li><a href="#resume" class="nav-cta">Resume</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="column-page">
+    <main id="main" class="column-page">
         <div class="container">
 
             <!-- Hero -->
-            <section class="hero fade-in-section">
-                <p class="hero-greeting">// hello world</p>
-                <h1 class="glitch hero-name" data-text="Andrew Cappelli">Andrew Cappelli</h1>
-                <p class="hero-role"><span class="prompt">&gt;</span> cybersecurity student &amp; developer</p>
+            <section class="hero" aria-labelledby="hero-name">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Cybersecurity &middot; Providence, RI</p>
+                    <h1 class="hero-name" id="hero-name">Andrew Cappelli</h1>
+                    <p class="hero-lede">
+                        I'm a cybersecurity student at Johnson &amp; Wales University and an IT networking
+                        technician. I secure and maintain network infrastructure by day, and build, break,
+                        and harden systems in the lab. This site collects my work, projects, and notes.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="ASSETS/Andrew-Cappelli-Resume.pdf" download class="btn btn-primary">
+                            <i data-lucide="download"></i> Download resume
+                        </a>
+                        <a href="mailto:andrewcappelli13@gmail.com" class="btn">
+                            <i data-lucide="mail"></i> Get in touch
+                        </a>
+                        <a class="icon-link" href="https://github.com/Andrew-most-likely" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </a>
+                        <a class="icon-link" href="https://www.linkedin.com/in/andrew-cappelli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.937 1.637-2.247 3.096-2.247 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <figure class="hero-portrait">
+                    <img src="ASSETS/IMAGES/profile-photo1.webp" alt="Portrait of Andrew Cappelli" class="profile-photo" width="220" height="260">
+                    <svg class="hero-sprig" viewBox="0 0 100 110" aria-hidden="true">
+                        <g class="sprig-stem" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 106 C 26 86, 40 62, 62 34"/>
+                            <path d="M27 82 C 14 78, 9 66, 12 57 C 23 61, 29 71, 27 82"/>
+                            <path d="M42 60 C 52 62, 62 56, 66 48 C 55 45, 46 50, 42 60"/>
+                            <path d="M52 47 C 50 42, 46 39, 42 38"/>
+                        </g>
+                        <g class="sprig-flower">
+                            <g class="sprig-bloom" transform="translate(66 26)">
+                                <ellipse cx="0" cy="-8.5" rx="5.2" ry="7.5"/>
+                                <ellipse cx="0" cy="-8.5" rx="5.2" ry="7.5" transform="rotate(72)"/>
+                                <ellipse cx="0" cy="-8.5" rx="5.2" ry="7.5" transform="rotate(144)"/>
+                                <ellipse cx="0" cy="-8.5" rx="5.2" ry="7.5" transform="rotate(216)"/>
+                                <ellipse cx="0" cy="-8.5" rx="5.2" ry="7.5" transform="rotate(288)"/>
+                            </g>
+                            <circle class="sprig-center" cx="66" cy="26" r="3.4"/>
+                            <circle class="sprig-bloom" cx="40" cy="36" r="3"/>
+                        </g>
+                    </svg>
+                </figure>
             </section>
 
-            <!-- Profile -->
-            <section class="title-section fade-in-section">
-                <div class="section-heading">about</div>
-                <div class="profile">
-                    <img src="ASSETS/IMAGES/profile-photo1.webp" alt="Profile Photo" class="profile-photo" id="profilePhoto">
-                    <div class="block-quote">
-                        <p class="profile-bio-title"><i data-lucide="book-open"></i>currently studying</p>
-                        <p class="profile-bio">Under-grad [Cyber Security]</p>
-                        <p class="profile-bio">Human Computer Interfaces</p>
-                        <p class="profile-bio">Distributed Systems</p>
+            <!-- At a glance -->
+            <section class="section fade-in-section" aria-labelledby="glance-heading">
+                <h2 class="section-heading" id="glance-heading">At a glance</h2>
+                <div class="glance">
+                    <div class="glance-item">
+                        <p class="glance-label">Currently</p>
+                        <p class="glance-title">Cyber Security Operations Intern</p>
+                        <p class="glance-sub">IT &amp; Security Services LLC</p>
+                    </div>
+                    <div class="glance-item">
+                        <p class="glance-label">Role</p>
+                        <p class="glance-title">IT Networking Technician</p>
+                        <p class="glance-sub">Johnson &amp; Wales University</p>
+                    </div>
+                    <div class="glance-item">
+                        <p class="glance-label">Studying</p>
+                        <p class="glance-title">B.S. Cyber Threat Intelligence &amp; Defense</p>
+                        <p class="glance-sub">Expected Nov 2027</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Bio + Skills + Social -->
-            <section class="section fade-in-section">
-                <div class="bio">
-                    <p class="bio-text">
-                        Howdy, I'm Andrew, a cybersecurity undergrad who likes building things as much as breaking them.
-                        This site is a living record of what I'm working on and thinking about.
-                        More to come as projects and notes pile up.
-                    </p>
-                    <div class="skill-grid">
-                        <span class="skill-tag"><i data-lucide="shield"></i>Cyber Security</span>
-                        <span class="skill-tag"><i data-lucide="code-2"></i>C++</span>
-                        <span class="skill-tag"><i data-lucide="cpu"></i>Assembly</span>
-                        <span class="skill-tag"><i data-lucide="braces"></i>JavaScript</span>
-                        <span class="skill-tag"><i data-lucide="layout"></i>HTML / CSS</span>
-                        <span class="skill-tag"><i data-lucide="coffee"></i>Java</span>
-                        <span class="skill-tag"><i data-lucide="terminal"></i>Linux</span>
-                        <span class="skill-tag"><i data-lucide="git-branch"></i>Git</span>
-                    </div>
-                    <div class="social-links">
-                        <a class="social-link-btn" target="_blank" href="https://github.com/Andrew-most-likely">
-                            <i data-lucide="github"></i> GitHub
-                        </a>
-                        <a class="social-link-btn" target="_blank" href="https://www.linkedin.com/in/andrew-cappelli">
-                            <i data-lucide="linkedin"></i> LinkedIn
-                        </a>
-                    </div>
+            <!-- Skills -->
+            <section class="section fade-in-section" aria-labelledby="skills-heading">
+                <h2 class="section-heading" id="skills-heading">Focus areas</h2>
+                <div class="skill-grid">
+                    <span class="skill-tag"><i data-lucide="shield-check"></i>Network Security</span>
+                    <span class="skill-tag"><i data-lucide="network"></i>Networking &amp; VLANs</span>
+                    <span class="skill-tag"><i data-lucide="search"></i>Threat Detection</span>
+                    <span class="skill-tag"><i data-lucide="server"></i>Windows &amp; Linux Admin</span>
+                    <span class="skill-tag"><i data-lucide="database"></i>Active Directory</span>
+                    <span class="skill-tag"><i data-lucide="wifi"></i>Wireless Site Surveys</span>
+                    <span class="skill-tag"><i data-lucide="cpu"></i>C, C++ &amp; Assembly</span>
+                    <span class="skill-tag"><i data-lucide="braces"></i>Python &amp; JavaScript</span>
+                    <span class="skill-tag"><i data-lucide="terminal"></i>Bash &amp; Linux</span>
+                    <span class="skill-tag"><i data-lucide="git-branch"></i>Git</span>
                 </div>
             </section>
 
             <!-- Resume -->
-            <section class="section fade-in-section">
-                <div class="section-heading">resume</div>
+            <section class="section fade-in-section" id="resume" aria-labelledby="resume-heading">
+                <h2 class="section-heading" id="resume-heading">Resume</h2>
                 <div class="resume-actions">
-                    <a href="ASSETS/Andrew-Cappelli-Resume.pdf" download class="social-link-btn">
+                    <a href="ASSETS/Andrew-Cappelli-Resume.pdf" download class="btn">
                         <i data-lucide="download"></i> Download PDF
                     </a>
-                    <a href="ASSETS/Andrew-Cappelli-Resume.pdf" target="_blank" class="social-link-btn">
+                    <a href="ASSETS/Andrew-Cappelli-Resume.pdf" target="_blank" rel="noopener" class="btn">
                         <i data-lucide="external-link"></i> Open PDF
                     </a>
                 </div>
-                <div class="resume-card">
+                <article class="resume-card">
 
-                    <div class="resume-hd">
+                    <header class="resume-hd">
                         <div>
                             <p class="resume-name">Andrew Cappelli</p>
+                            <p class="resume-title">Cybersecurity &amp; IT Networking</p>
                         </div>
                         <div class="resume-hd-links">
-                            <a href="https://cappel.li" target="_blank">cappel.li</a>
+                            <a href="https://cappel.li">cappel.li</a>
                             <a href="mailto:andrewcappelli13@gmail.com">andrewcappelli13@gmail.com</a>
-                            <a href="https://www.linkedin.com/in/andrew-cappelli" target="_blank">linkedin.com/in/andrew-cappelli</a>
+                            <a href="https://www.linkedin.com/in/andrew-cappelli" target="_blank" rel="noopener noreferrer">linkedin.com/in/andrew-cappelli</a>
+                        </div>
+                    </header>
+
+                    <div class="resume-block">
+                        <h3 class="resume-block-title">Summary</h3>
+                        <div>
+                            <p class="resume-body-text">Cybersecurity student and IT professional with hands-on experience securing and maintaining enterprise network infrastructure. Currently pursuing a B.S. in Cyber Threat Intelligence and Defense, with coursework spanning network security, digital forensics, and wireless architecture. Dual focus on offensive and defensive security: building, breaking, and hardening systems in both academic and production environments.</p>
                         </div>
                     </div>
 
                     <div class="resume-block">
-                        <div class="resume-block-title">Professional Summary</div>
-                        <p class="resume-body-text">Cybersecurity student and IT professional with hands-on experience securing and maintaining enterprise network infrastructure. Currently pursuing a B.S. in Cyber Threat Intelligence and Defense, with coursework spanning network security, digital forensics, and wireless architecture. Dual focus on offensive and defensive security: building, breaking, and hardening systems in both academic and production environments.</p>
+                        <h3 class="resume-block-title">Experience</h3>
+                        <div>
+                            <p class="resume-org">IT &amp; Security Services LLC &middot; Providence, RI</p>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Cyber Security Operations Intern</span>
+                                    <span class="resume-date">Feb 2026 – Present</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Research emerging security technologies and tooling to identify opportunities for workflow optimization.</li>
+                                    <li>Assist in developing operational safety protocols and security procedures for workplace environments.</li>
+                                    <li>Deliver technical support for complex operational systems, ensuring continuity of security operations.</li>
+                                </ul>
+                            </div>
+
+                            <p class="resume-org" style="margin-top:1.5rem;">Johnson &amp; Wales University &middot; Providence, RI</p>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">IT Networking Technician</span>
+                                    <span class="resume-date">Aug 2025 – Present</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Maintain and secure campus-wide network infrastructure, ensuring reliable connectivity across university facilities.</li>
+                                    <li>Perform wireless site surveys, diagnose signal degradation, and execute network port upgrades to improve coverage and throughput.</li>
+                                    <li>Harden and configure endpoints for faculty, staff, and students to enforce institutional security baselines and access controls.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Information Technology Field Technician</span>
+                                    <span class="resume-date">May 2023 – Aug 2025</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Resolved hardware and software incidents across desktops, printers, and network devices for university departments.</li>
+                                    <li>Triaged, documented, and closed service tickets in adherence with change-control protocols and SLA requirements.</li>
+                                    <li>Deployed and validated system configurations to sustain operational readiness across campus environments.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="resume-block">
-                        <div class="resume-block-title">Technical Skills</div>
+                        <h3 class="resume-block-title">Leadership</h3>
+                        <div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Executive Chair <span class="resume-org-inline">&middot; National Cybersecurity Student Association (NCSA)</span></span>
+                                    <span class="resume-date">Sept 2023 – May 2026</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Facilitate hands-on workshops covering penetration testing methodology, vulnerability analysis, and secure coding practices.</li>
+                                    <li>Organize and run Capture the Flag (CTF) competitions to develop members' applied offensive and defensive security skills.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3 class="resume-block-title">Projects</h3>
+                        <div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Linux Server Deployment</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Architected and deployed a Linux-based web and email server in VirtualBox, configuring DNS records and securing client-server communications end-to-end.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Windows Server 2016 / Active Directory Lab</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Deployed Windows Server 2016 in a virtualized environment, configuring a fully functional Active Directory domain with user groups, OUs, and access controls.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">JWU CTF: Challenge Design</span>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Authored eight original Capture the Flag challenges for the JWU CTF event, spanning exploit categories including web vulnerabilities, cryptography, and reverse engineering.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Cybersecurity Awareness Platform</span>
+                                    <a href="https://andrew-most-likely.github.io/Cybersecurity-Awareness/" target="_blank" rel="noopener noreferrer" class="resume-link">View project ↗</a>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Designed and deployed an interactive web platform educating users on threat vectors, social engineering, and safe online behavior.</li>
+                                </ul>
+                            </div>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">Personal Portfolio Website</span>
+                                    <a href="https://github.com/Andrew-most-likely/Personal-Website" target="_blank" rel="noopener noreferrer" class="resume-link">View source ↗</a>
+                                </div>
+                                <ul class="resume-list">
+                                    <li>Built a fully responsive portfolio from scratch (no frameworks) using HTML, CSS, and JavaScript with dynamic JSON-driven content loading and CSS animations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3 class="resume-block-title">Skills</h3>
                         <div class="resume-skill-list">
                             <div class="resume-skill-row"><span class="rsl">Networking</span><span>TCP/IP, DNS, DHCP, LAN/WAN, VLANs, Switches/Routers, Firewalls</span></div>
                             <div class="resume-skill-row"><span class="rsl">Cybersecurity</span><span>Threat Detection, Incident Response, Network Security, Security Hardening, Penetration Testing</span></div>
-                            <div class="resume-skill-row"><span class="rsl">Systems & Tools</span><span>Windows & Linux Admin, VirtualBox, Wireshark, PuTTY, Active Directory, Network Monitoring</span></div>
+                            <div class="resume-skill-row"><span class="rsl">Systems &amp; Tools</span><span>Windows &amp; Linux Admin, VirtualBox, Wireshark, PuTTY, Active Directory, Network Monitoring</span></div>
                             <div class="resume-skill-row"><span class="rsl">Frameworks</span><span>NIST CSF, Risk Management Framework (RMF), DoD Information Assurance Awareness</span></div>
                             <div class="resume-skill-row"><span class="rsl">Programming</span><span>C++, C, Assembly, JavaScript, Python, SQL, Bash, HTML/CSS</span></div>
                             <div class="resume-skill-row"><span class="rsl">Other Tools</span><span>MySQL, Git, VS Code, Visual Studio, MAMP, Windows Server 2016</span></div>
                         </div>
                     </div>
 
-                    <div class="resume-block">
-                        <div class="resume-block-title">Professional Experience</div>
-                        <p class="resume-org">IT & Security Services LLC, Providence, RI</p>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Cyber Security Operations Intern</span>
-                                <span class="resume-date">Feb 2026 – Present</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Research emerging security technologies and tooling to identify opportunities for workflow optimization.</li>
-                                <li>Assist in developing operational safety protocols and security procedures for workplace environments.</li>
-                                <li>Deliver technical support for complex operational systems, ensuring continuity of security operations.</li>
-                            </ul>
-                        </div>
-
-                        <p class="resume-org" style="margin-top:0.75rem;">Johnson & Wales University, Providence, RI</p>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">IT Networking Technician</span>
-                                <span class="resume-date">Aug 2025 – Present</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Maintain and secure campus-wide network infrastructure, ensuring reliable connectivity across university facilities.</li>
-                                <li>Perform wireless site surveys, diagnose signal degradation, and execute network port upgrades to improve coverage and throughput.</li>
-                                <li>Harden and configure endpoints for faculty, staff, and students to enforce institutional security baselines and access controls.</li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Information Technology Field Technician</span>
-                                <span class="resume-date">May 2023 – Aug 2025</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Resolved hardware and software incidents across desktops, printers, and network devices for university departments.</li>
-                                <li>Triaged, documented, and closed service tickets in adherence with change-control protocols and SLA requirements.</li>
-                                <li>Deployed and validated system configurations to sustain operational readiness across campus environments.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="resume-block">
-                        <div class="resume-block-title">Technical Projects</div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Linux Server Deployment</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Architected and deployed a Linux-based web and email server in VirtualBox, configuring DNS records and securing client-server communications end-to-end.</li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Windows Server 2016 / Active Directory Lab</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Deployed Windows Server 2016 in a virtualized environment, configuring a fully functional Active Directory domain with user groups, OUs, and access controls.</li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">JWU CTF: Challenge Design</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Authored eight original Capture the Flag challenges for the JWU CTF event, spanning exploit categories including web vulnerabilities, cryptography, and reverse engineering.</li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Cybersecurity Awareness Platform</span>
-                                <a href="https://andrew-most-likely.github.io/Cybersecurity-Awareness/" target="_blank" class="resume-link">↗ view</a>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Designed and deployed an interactive web platform educating users on threat vectors, social engineering, and safe online behavior.</li>
-                            </ul>
-                        </div>
-
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Personal Portfolio Website</span>
-                                <a href="https://cappel.li" target="_blank" class="resume-link">↗ view</a>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Built a fully responsive portfolio from scratch (no frameworks) using HTML, CSS, and JavaScript with dynamic JSON-driven content loading and CSS animations.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="resume-block">
-                        <div class="resume-block-title">Leadership & Involvement</div>
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">Executive Chair <span class="resume-org-inline">· National Cybersecurity Student Association (NCSA)</span></span>
-                                <span class="resume-date">Sept 2023 – May 2026</span>
-                            </div>
-                            <ul class="resume-list">
-                                <li>Facilitate hands-on workshops covering penetration testing methodology, vulnerability analysis, and secure coding practices.</li>
-                                <li>Organize and run Capture the Flag (CTF) competitions to develop members' applied offensive and defensive security skills.</li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div class="resume-block resume-block--last">
-                        <div class="resume-block-title">Education</div>
-                        <p class="resume-org">Johnson & Wales University, Providence, RI</p>
-                        <div class="resume-entry">
-                            <div class="resume-entry-hd">
-                                <span class="resume-role">B.S. in Cyber Threat Intelligence and Defense</span>
-                                <span class="resume-date">Expected Nov 2027</span>
+                        <h3 class="resume-block-title">Education</h3>
+                        <div>
+                            <p class="resume-org">Johnson &amp; Wales University &middot; Providence, RI</p>
+                            <div class="resume-entry">
+                                <div class="resume-entry-hd">
+                                    <span class="resume-role">B.S. in Cyber Threat Intelligence and Defense</span>
+                                    <span class="resume-date">Expected Nov 2027</span>
+                                </div>
+                                <p class="resume-coursework"><span class="rsl">Relevant coursework:</span> Network Security, Cyber Defense, Computer Forensics, Wireless Architecture</p>
                             </div>
-                            <p class="resume-coursework"><span class="rsl">Relevant Coursework:</span> Network Security, Cyber Defense, Computer Forensics, Wireless Architecture</p>
                         </div>
                     </div>
 
+                </article>
+            </section>
+
+            <!-- Contact -->
+            <section class="contact fade-in-section" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Let's connect</h2>
+                <p>Have a question, an opportunity, or a project in mind? I'd be glad to hear from you.</p>
+                <div class="hero-actions">
+                    <a href="mailto:andrewcappelli13@gmail.com" class="btn btn-primary"><i data-lucide="mail"></i> andrewcappelli13@gmail.com</a>
                 </div>
             </section>
 
         </div>
-    </div>
+    </main>
 
-    <div class="footer-div">
-        <ul class="footer-ul">
-            <li class="footer-li"><a class="footer-a" target="_blank" href="mailto:AndrewCappelli13@gmail.com"><i data-lucide="mail"></i>email</a></li>
-            <li class="footer-li"><a class="footer-a" target="_blank" href="https://www.linkedin.com/in/andrew-cappelli/"><i data-lucide="linkedin"></i>linkedin</a></li>
-            <li class="footer-li"><a class="footer-a" target="_blank" href="https://github.com/Andrew-most-likely/"><i data-lucide="github"></i>github</a></li>
-        </ul>
-    </div>
+    <footer class="footer-div">
+        <div class="footer-inner">
+            <p class="footer-copy"><span class="bloom" aria-hidden="true"></span>&copy; <span class="js-year">2026</span> Andrew Cappelli</p>
+            <ul class="footer-ul">
+                <li><a class="footer-a" href="mailto:andrewcappelli13@gmail.com">Email</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrew-cappelli/">LinkedIn</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://github.com/Andrew-most-likely/">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
 
+    <script src="https://unpkg.com/lucide@1.50.0/dist/umd/lucide.min.js"></script>
     <script src="JS/main.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script>lucide.createIcons();</script>
 </body>
 
 </html>

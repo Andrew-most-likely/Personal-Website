@@ -5,26 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Projects by Andrew Cappelli: software, security, and web development work.">
-    <meta name="keywords" content="Andrew Cappelli, Projects, Cyber Security, Software Development, Web Development">
+    <title>Projects · Andrew Cappelli</title>
+    <meta name="description" content="Projects by Andrew Cappelli: security tooling, systems work, and web development.">
     <meta name="author" content="Andrew Cappelli">
+    <link rel="canonical" href="https://cappel.li/HTML/projects.html">
+    <meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
 
-    <meta property="og:title" content="Projects | Andrew Cappelli">
-    <meta property="og:description" content="Projects by Andrew Cappelli: software, security, and web development work.">
-    <meta property="og:image" content="../ASSETS/IMAGES/profile-photo1.webp">
+    <meta property="og:title" content="Projects · Andrew Cappelli">
+    <meta property="og:description" content="Projects by Andrew Cappelli: security tooling, systems work, and web development.">
+    <meta property="og:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
     <meta property="og:url" content="https://cappel.li/HTML/projects.html">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:title" content="Projects | Andrew Cappelli">
-    <meta name="twitter:description" content="Projects by Andrew Cappelli: software, security, and web development work.">
-    <meta name="twitter:image" content="../ASSETS/IMAGES/profile-photo1.webp">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Projects · Andrew Cappelli">
+    <meta name="twitter:description" content="Projects by Andrew Cappelli: security tooling, systems work, and web development.">
+    <meta name="twitter:image" content="https://cappel.li/ASSETS/IMAGES/profile-photo1.webp">
 
-    <title>Projects | Andrew Cappelli</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/responsive.css">
     <link rel="stylesheet" href="../CSS/project.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <!-- Google tag (gtag.js) -->
@@ -39,75 +43,59 @@
 
 <body>
 
-    <div id="bg-icons" aria-hidden="true">
-        <span><i data-lucide="terminal"></i></span>
-        <span><i data-lucide="code-2"></i></span>
-        <span><i data-lucide="cpu"></i></span>
-        <span><i data-lucide="shield"></i></span>
-        <span><i data-lucide="git-branch"></i></span>
-        <span><i data-lucide="lock"></i></span>
-        <span><i data-lucide="key"></i></span>
-        <span><i data-lucide="database"></i></span>
-        <span><i data-lucide="server"></i></span>
-        <span><i data-lucide="wifi"></i></span>
-        <span><i data-lucide="bug"></i></span>
-        <span><i data-lucide="hard-drive"></i></span>
-        <span><i data-lucide="monitor"></i></span>
-        <span><i data-lucide="globe"></i></span>
-        <span><i data-lucide="hash"></i></span>
-        <span><i data-lucide="fingerprint"></i></span>
-        <span><i data-lucide="eye"></i></span>
-        <span><i data-lucide="activity"></i></span>
-        <span><i data-lucide="command"></i></span>
-        <span><i data-lucide="zap"></i></span>
-        <span><i data-lucide="layers"></i></span>
-        <span><i data-lucide="network"></i></span>
-        <span><i data-lucide="code"></i></span>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
-        <a class="nav-brand" href="../index">&gt;_ ac</a>
-        <ul>
-            <li><a href="../index.html"><i data-lucide="user"></i>About</a></li>
-            <li><a href="projects.html" class="nav-active"><i data-lucide="folder-open"></i>Projects</a></li>
-            <li><a href="notes.html"><i data-lucide="file-text"></i>Notes</a></li>
-        </ul>
+    <nav aria-label="Primary">
+        <div class="nav-inner">
+            <a class="nav-brand" href="../index.html" aria-label="Andrew Cappelli, home"><span class="bloom" aria-hidden="true"></span><span class="nav-brand-text">Andrew Cappelli</span></a>
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="projects.html" class="nav-active" aria-current="page">Projects</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="../index.html#resume" class="nav-cta">Resume</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="column-page">
+    <main id="main" class="column-page">
         <div class="container">
 
-            <header class="page-header fade-in-section">
-                <p class="page-header-label">// ls -la ./projects</p>
-                <h1 class="glitch" data-text="My Projects">My Projects</h1>
+            <header class="page-header">
+                <p class="page-header-label">Portfolio</p>
+                <h1>Projects</h1>
+                <p class="page-header-lede">Selected work in security tooling, systems, and the web, plus everything I publish on GitHub.</p>
             </header>
 
-            <section id="ProjectSection" class="section projects-grid fade-in-section">
-                <div class="section-heading">featured</div>
+            <section id="ProjectSection" class="section fade-in-section" aria-labelledby="featured-heading">
+                <h2 class="section-heading" id="featured-heading">Featured</h2>
                 <!-- Projects populated by JavaScript -->
             </section>
 
-            <section id="RepoSection" class="section fade-in-section">
-                <div class="section-heading">repositories</div>
+            <section id="RepoSection" class="section fade-in-section" aria-labelledby="repos-heading">
+                <h2 class="section-heading" id="repos-heading">Open source</h2>
                 <div class="repos-grid">
                     <!-- Populated by GitHub API -->
                 </div>
+                <p class="repos-more"><a href="https://github.com/Andrew-most-likely" target="_blank" rel="noopener noreferrer">View all on GitHub ↗</a></p>
             </section>
 
         </div>
-    </div>
+    </main>
 
-    <div class="footer-div">
-        <ul class="footer-ul">
-            <li class="footer-li"><a class="footer-a" target="_blank" href="mailto:AndrewCappelli13@gmail.com"><i data-lucide="mail"></i>email</a></li>
-            <li class="footer-li"><a class="footer-a" target="_blank" href="https://www.linkedin.com/in/andrew-cappelli/"><i data-lucide="linkedin"></i>linkedin</a></li>
-            <li class="footer-li"><a class="footer-a" target="_blank" href="https://github.com/Andrew-most-likely/"><i data-lucide="github"></i>github</a></li>
-        </ul>
-    </div>
+    <footer class="footer-div">
+        <div class="footer-inner">
+            <p class="footer-copy"><span class="bloom" aria-hidden="true"></span>&copy; <span class="js-year">2026</span> Andrew Cappelli</p>
+            <ul class="footer-ul">
+                <li><a class="footer-a" href="mailto:andrewcappelli13@gmail.com">Email</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrew-cappelli/">LinkedIn</a></li>
+                <li><a class="footer-a" target="_blank" rel="noopener noreferrer" href="https://github.com/Andrew-most-likely/">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
 
+    <script src="https://unpkg.com/lucide@1.50.0/dist/umd/lucide.min.js"></script>
+    <script src="../JS/main.js"></script>
     <script src="../JS/projects.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script>lucide.createIcons();</script>
 </body>
 
 </html>

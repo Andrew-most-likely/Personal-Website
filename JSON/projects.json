@@ -1,15 +1,16 @@
-
 [
   {
-    "name": "Project Website",
+    "name": "Personal Website Guide",
     "video": "../PROJECTS/personalWebsite/Personalwebsite.mp4",
     "poster": "../PROJECTS/personalWebsite/Personalwebsite.png",
-    "link": "../PROJECTS/personalWebsite/personalWebsite.html"
+    "link": "../PROJECTS/personalWebsite/personalWebsite.html",
+    "description": "A step-by-step guide to building and hosting a personal website with GitHub Pages and Cloudflare."
   },
   {
     "name": "Cyber Awareness",
     "video": "../PROJECTS/CyberAwareness/Cyber_Awareness.mp4",
     "poster": "../PROJECTS/CyberAwareness/Cyber_Awareness.png",
-    "link": "https://andrew-most-likely.github.io/Cybersecurity-Awareness/"
+    "link": "https://andrew-most-likely.github.io/Cybersecurity-Awareness/",
+    "description": "An interactive web platform that teaches threat vectors, social engineering, and safe online behavior."
   }
 ]

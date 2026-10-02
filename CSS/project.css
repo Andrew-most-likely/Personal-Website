@@ -1,55 +1,74 @@
+/* ── Featured projects ────────────────────────────────────── */
 .projects-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
 }
 
 .project-column {
-  flex: 1 1 30%;
-  box-sizing: border-box;
-  border: 1px solid var(--c-border);
-  border-radius: 10px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background: var(--c-surface);
-  transition: border-color 0.2s;
+  border: 1px solid var(--c-border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .project-column:hover {
   border-color: var(--c-border-hi);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
-.project-column img,
-.project-column video {
+.project-media {
+  aspect-ratio: 16 / 10;
+  background: var(--c-surface-2);
+  border-bottom: 1px solid var(--c-border);
+  overflow: hidden;
+}
+
+.project-media video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  transition: opacity 0.3s;
 }
 
-.project-column:hover img,
-.project-column:hover video {
-  opacity: 0.85;
+.project-body {
+  padding: 1.1rem 1.25rem 1.25rem;
 }
 
 .project-label {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--c-body);
-  text-align: center;
-  padding: 0.6em 0.75em;
-  line-height: 1.4;
-  border-top: 1px solid var(--c-border);
-  background: var(--c-surface);
-}
-
-.project-label::before {
-  content: '$ ';
-  color: var(--accent);
-  font-family: monospace;
-}
-
-pre {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0 0 0.3rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--c-heading);
+}
+
+.project-label svg {
+  width: 16px;
+  height: 16px;
+  color: var(--c-muted);
+  transition: color 0.15s, transform 0.15s;
+}
+
+.project-column:hover .project-label svg {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.project-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--c-muted);
 }
 
 /* ── GitHub repo cards ────────────────────────────────────── */
@@ -62,18 +81,18 @@ pre {
 .repo-card {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.1rem 1.25rem;
+  gap: 0.55rem;
+  padding: 1.15rem 1.25rem;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .repo-card:hover {
   border-color: var(--c-border-hi);
-  background: var(--c-surface-2);
+  box-shadow: var(--shadow);
 }
 
 .repo-card-header {
@@ -86,90 +105,239 @@ pre {
 .repo-name {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.88rem;
+  gap: 0.45rem;
+  min-width: 0;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--c-heading);
-  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.repo-card:hover .repo-name { color: var(--accent); }
+
 .repo-name svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   stroke-width: 2;
-  opacity: 0.5;
+  color: var(--c-muted);
 }
 
 .repo-lang {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  flex-shrink: 0;
+  font-size: 0.74rem;
   color: var(--c-muted);
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .lang-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .repo-description {
-  font-size: 0.8rem;
-  color: var(--c-muted);
-  line-height: 1.55;
-  margin: 0;
   flex: 1;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--c-body);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .repo-no-desc {
   font-style: italic;
-  opacity: 0.6;
+  color: var(--c-muted);
 }
 
 .repo-meta {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-top: 0.25rem;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
 }
 
 .repo-stat {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: var(--c-muted);
 }
 
 .repo-stat svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
   stroke-width: 2;
 }
 
 .repo-updated {
-  font-size: 0.7rem;
-  color: var(--c-muted);
   margin-left: auto;
-  opacity: 0.7;
+  font-size: 0.74rem;
+  color: var(--c-muted);
 }
 
 .repo-loading {
-  color: var(--c-muted);
-  font-size: 0.85rem;
-  font-style: italic;
+  grid-column: 1 / -1;
+  margin: 0;
   padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--c-muted);
+}
+
+.repos-more {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.repos-more a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.repos-more a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 520px) {
+  .projects-flex { grid-template-columns: 1fr; }
+}
+
+/* ── Guide pages ──────────────────────────────────────────── */
+.page-header-label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-header-label a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.guide-reqs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-reqs li {
+  padding: 0.4rem 0.85rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--c-muted);
+}
+
+.guide-reqs a {
+  color: var(--c-heading);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.guide-reqs a:hover { color: var(--accent); }
+
+.guide-step {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.guide-step:first-of-type { padding-top: 0; }
+.guide-step:last-of-type { border-bottom: none; }
+
+.guide-step h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--c-heading);
+}
+
+.guide-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--bloom);
+}
+
+.guide-optional {
+  padding: 0.15rem 0.55rem;
+  background: var(--c-surface-2);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.guide-step ol,
+.guide-step ul {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.guide-step li {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.guide-step li::marker { color: var(--c-muted); }
+
+.guide-step ul { margin-top: 0.4rem; }
+
+.guide-step strong {
+  font-weight: 600;
+  color: var(--c-heading);
+}
+
+.guide-step code {
+  padding: 0.1rem 0.35rem;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--c-heading);
+}
+
+.guide-step pre {
+  margin: 0.75rem 0 0;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  line-height: 1.55;
+}
+
+.guide-step pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.guide-note {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  background: var(--bloom-dim);
+  border-left: 2px solid var(--bloom);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: var(--c-body);
 }

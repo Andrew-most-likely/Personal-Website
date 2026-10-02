@@ -1,4 +1,5 @@
 let sortedNotes = [];
+let lastFocused = null;
 
 async function fetchNotes() {
     try {
@@ -12,23 +13,24 @@ async function fetchNotes() {
 }
 
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' };
     return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+function renderTags(tags) {
+    return `<div class="note-tags">${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>`;
 }
 
 function createNoteCard(note, index) {
     return `
-        <article class="note-card" data-note-index="${index}">
-            <div class="note-header">
-                <h3>${note.title}</h3>
-                <time datetime="${note.date}">${formatDate(note.date)}</time>
-            </div>
-            <p class="note-preview">${note.preview}</p>
-            <div class="note-footer">
-                <div class="note-tags">
-                    ${note.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
-                </div>
-                <button onclick="openNote(${index})" class="read-more">Read More</button>
+        <article class="note-card">
+            <time datetime="${note.date}">${formatDate(note.date)}</time>
+            <div>
+                <h3 class="note-title">
+                    <button type="button" class="note-open" data-note-index="${index}" aria-haspopup="dialog">${note.title}</button>
+                </h3>
+                <p class="note-preview">${note.preview}</p>
+                ${renderTags(note.tags)}
             </div>
         </article>
     `;
@@ -40,58 +42,68 @@ async function populateNotes() {
 
     const notes = await fetchNotes();
     sortedNotes = notes.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    if (sortedNotes.length === 0) {
+        notesGrid.innerHTML = '<p class="notes-empty">No notes yet. Check back soon.</p>';
+        return;
+    }
+
     notesGrid.innerHTML = sortedNotes.map((note, i) => createNoteCard(note, i)).join('');
+    notesGrid.addEventListener('click', (event) => {
+        const button = event.target.closest('.note-open');
+        if (button) openNote(Number(button.dataset.noteIndex));
+    });
 }
 
 function openNote(index) {
     const note = sortedNotes[index];
     if (!note) return;
 
+    lastFocused = document.activeElement;
+
+    const updated = note.lastUpdated && note.lastUpdated !== note.date
+        ? `<span>Updated <time datetime="${note.lastUpdated}">${formatDate(note.lastUpdated)}</time></span>`
+        : '';
+
     const modal = document.createElement('div');
     modal.className = 'note-modal';
     modal.innerHTML = `
-        <div class="note-modal-content">
-            <button onclick="closeNote()" class="close-button">&times;</button>
+        <div class="note-modal-content" role="dialog" aria-modal="true" aria-labelledby="note-modal-title">
+            <button type="button" class="close-button" aria-label="Close">&times;</button>
             <div class="note-modal-body">
-                <h2>${note.title}</h2>
-                <time datetime="${note.date}">Published: ${formatDate(note.date)}</time>
-                ${note.lastUpdated !== note.date ?
-                    `<time datetime="${note.lastUpdated}">Updated: ${formatDate(note.lastUpdated)}</time>`
-                    : ''}
+                <p class="note-modal-meta">
+                    <span>Published <time datetime="${note.date}">${formatDate(note.date)}</time></span>
+                    ${updated}
+                </p>
+                <h2 id="note-modal-title">${note.title}</h2>
                 <div class="note-content">${note.content}</div>
-                <div class="note-tags">
-                    ${note.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
-                </div>
+                ${renderTags(note.tags)}
             </div>
         </div>
     `;
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal || event.target.closest('.close-button')) closeNote();
+    });
+
     document.body.appendChild(modal);
+    document.body.classList.add('modal-open');
     document.addEventListener('keydown', handleEscKey);
+    modal.querySelector('.close-button').focus();
 }
 
 function closeNote() {
     const modal = document.querySelector('.note-modal');
-    if (modal) {
-        modal.remove();
-        document.removeEventListener('keydown', handleEscKey);
-    }
+    if (!modal) return;
+
+    modal.remove();
+    document.body.classList.remove('modal-open');
+    document.removeEventListener('keydown', handleEscKey);
+    if (lastFocused) lastFocused.focus();
 }
 
 function handleEscKey(event) {
     if (event.key === 'Escape') closeNote();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    populateNotes();
-
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                fadeObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
-});
+document.addEventListener('DOMContentLoaded', populateNotes);

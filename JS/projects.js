@@ -17,31 +17,48 @@ const LANG_COLORS = {
   'PowerShell':  '#012456',
 };
 
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  })[ch]);
+}
+
 function loadProjects() {
   fetch('../JSON/projects.json')
     .then(response => response.json())
     .then(projects => {
       const projectSection = document.getElementById('ProjectSection');
-      let projectHTML = '';
 
-      projects.forEach(project => {
-        projectHTML += `
-          <div class="project-column">
-            <a href="${project.link}" target="_blank">
-              <video preload="none" loop muted poster="${project.poster}"
-                onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="${project.video}" type="video/mp4">Your browser does not support the video tag.
+      const projectHTML = projects.map(project => {
+        const external = /^https?:/.test(project.link);
+        const target = external ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `
+          <a class="project-column" href="${project.link}"${target}>
+            <div class="project-media">
+              <video preload="none" loop muted playsinline poster="${project.poster}">
+                <source src="${project.video}" type="video/mp4">
               </video>
-            </a>
-            <div class="project-label">${project.name}</div>
-          </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-label">${project.name}<i data-lucide="arrow-up-right"></i></h3>
+              ${project.description ? `<p class="project-desc">${project.description}</p>` : ''}
+            </div>
+          </a>
         `;
-      });
+      }).join('');
 
       const wrapper = document.createElement('div');
       wrapper.className = 'projects-flex';
       wrapper.innerHTML = projectHTML;
       projectSection.appendChild(wrapper);
+
+      wrapper.querySelectorAll('.project-column').forEach(card => {
+        const video = card.querySelector('video');
+        card.addEventListener('mouseenter', () => video.play().catch(() => {}));
+        card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      });
+
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     })
     .catch(error => console.error('Error loading projects:', error));
 }
@@ -67,13 +84,13 @@ function createRepoCard(repo) {
   const forks  = repo.forks_count > 0
     ? `<span class="repo-stat"><i data-lucide="git-fork"></i>${repo.forks_count}</span>` : '';
   const desc   = repo.description
-    ? `<p class="repo-description">${repo.description}</p>`
+    ? `<p class="repo-description">${escapeHTML(repo.description)}</p>`
     : `<p class="repo-description repo-no-desc">No description provided.</p>`;
 
   return `
     <a class="repo-card" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
       <div class="repo-card-header">
-        <span class="repo-name"><i data-lucide="book-marked"></i>${repo.name}</span>
+        <span class="repo-name"><i data-lucide="book-marked"></i>${escapeHTML(repo.name)}</span>
         ${lang}
       </div>
       ${desc}
@@ -113,22 +130,11 @@ async function loadRepos() {
 
   } catch (err) {
     console.error('Error loading repos:', err);
-    grid.innerHTML = '<p class="repo-loading">Could not load repositories — check back later.</p>';
+    grid.innerHTML = '<p class="repo-loading">Repositories could not be loaded right now. They are all on GitHub.</p>';
   }
 }
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   loadProjects();
   loadRepos();
-
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
-};
+});

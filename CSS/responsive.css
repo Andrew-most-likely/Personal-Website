@@ -1,154 +1,104 @@
-/* ── 768px and below ──────────────────────────────────────── */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 0.5rem;
+/* ── 760px and below ──────────────────────────────────────── */
+@media screen and (max-width: 760px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        padding-top: 3rem;
     }
 
-    .profile {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-
-    .block-quote {
-        margin-left: 0;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-/* ── 480px and below ──────────────────────────────────────── */
-@media screen and (max-width: 480px) {
-    .nav-brand { display: none; }
-
-    p {
-        font-size: 0.9rem;
-        overflow: hidden;
-    }
-
-    .container {
-        padding: 0.5rem;
-        width: 100%;
-        justify-content: center;
-        margin: 0;
-    }
-
-    nav ul {
-        gap: 0;
-    }
-
-    .profile {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .block-quote {
-        max-width: 100%;
+    .hero-portrait {
+        order: -1;
+        width: 132px;
     }
 
     .profile-photo {
-        width: 130px;
-        height: 130px;
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
     }
 
-    .hero-name {
-        font-size: 2.2rem;
+    .hero-sprig {
+        width: 64px;
+        right: -30px;
+        bottom: -14px;
     }
-}
 
-/* ── Resume responsive ────────────────────────────────────── */
-@media screen and (max-width: 600px) {
+    .glance {
+        grid-template-columns: 1fr;
+    }
+
     .resume-card {
-        padding: 1.1rem;
+        padding: 1.5rem 1.25rem;
     }
 
-    .resume-hd {
-        flex-direction: column;
-        gap: 0.75rem;
+    .resume-block {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
     }
 
     .resume-hd-links {
         text-align: left;
     }
 
-    .resume-entry-hd {
-        flex-direction: column;
-        gap: 0.15rem;
-    }
-
     .resume-skill-row {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 0.05rem;
     }
 
-    .rsl {
-        min-width: unset;
+    .contact {
+        padding: 2rem 1.25rem;
+    }
+
+    .page-header {
+        padding-top: 3rem;
+    }
+}
+
+/* ── 520px and below ──────────────────────────────────────── */
+@media screen and (max-width: 520px) {
+    .container,
+    .nav-inner,
+    .footer-inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nav-brand .nav-brand-text { display: none; }
+
+    nav ul a {
+        padding: 0.45rem 0.6rem;
+    }
+
+    nav ul a.nav-cta {
+        margin-left: 0.25rem;
+    }
+
+    .footer-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
     }
 }
 
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
-    nav {
+    nav,
+    .skip-link,
+    .footer-div,
+    .resume-actions,
+    .hero-actions,
+    .contact,
+    .hero-sprig {
         display: none;
     }
 
-    .column-page {
-        margin-top: 0;
-    }
-}
-
-/* ── 1024px and above ─────────────────────────────────────── */
-@media screen and (min-width: 1024px) {
-    .container {
-        padding: 2rem;
-        max-width: 800px;
+    .fade-in-section {
+        opacity: 1;
+        transform: none;
     }
 
-    .profile {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 1.5rem;
-        align-items: flex-start;
-    }
-
-    .block-quote {
-        max-width: 340px;
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: var(--c-bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: var(--c-surface-2);
-        border-radius: 4px;
-        border: 2px solid var(--c-bg);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--c-muted);
-    }
-}
-
-/* ── Project grid breakpoints ─────────────────────────────── */
-@media (max-width: 1024px) {
-    .project-column {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .project-column {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .resume-card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
     }
 }
