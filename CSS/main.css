@@ -1,44 +1,61 @@
 /* ── Design tokens ────────────────────────────────────────── */
 :root {
-  --c-bg:        #FAF8F4;
-  --c-surface:   #FFFFFF;
-  --c-surface-2: #F3F0EA;
-  --c-border:    #E6E1D8;
-  --c-border-hi: #CFC8BB;
-  --c-body:      #3E3A35;
-  --c-heading:   #1B1916;
-  --c-muted:     #77716A;
-  --accent:      #2F5D50;
-  --accent-hi:   #24493F;
-  --accent-dim:  rgba(47,93,80,0.08);
-  --bloom:       #C2766B;
-  --bloom-dim:   rgba(194,118,107,0.14);
-  --shadow:      0 1px 2px rgba(27,25,22,0.04), 0 8px 24px rgba(27,25,22,0.05);
+  /* Palette: ivory leather, teal trim, embroidered florals */
+  --c-bg:        #F4EFE6;
+  --c-surface:   #FBF8F2;
+  --c-surface-2: #EDE6DA;
+  --c-border:    #E0D6C6;
+  --c-border-hi: #CBBFAB;
+  --c-body:      #3A3833;
+  --c-heading:   #1C2729;
+  --c-muted:     #736F66;
+  --accent:      #187A88;
+  --accent-hi:   #12626E;
+  --accent-dim:  rgba(24,122,136,0.09);
+  --on-accent:   #FBF8F2;
+  --bloom:       #C2343B;
+  --bloom-2:     #3FB6CC;
+  --bloom-dim:   rgba(194,52,59,0.10);
+  --leaf:        #7C9A3E;
+  --gold:        #E0A92E;
+  --swirl:       #9DBFD0;
+  --suede:       #D8B98C;
+  --stitch:      rgba(24,122,136,0.32);
+  --stitch-on-accent: rgba(251,248,242,0.55);
+  --shadow:      0 1px 2px rgba(28,39,41,0.05), 0 8px 24px rgba(28,39,41,0.06);
 
   --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-sans:  'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --bloom-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(72 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(144 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(216 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(288 12 12)'/%3E%3C/g%3E%3C/svg%3E");
+  --bloom-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(72 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(144 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(216 12 12)'/%3E%3Cellipse cx='12' cy='5.6' rx='3' ry='3.6' transform='rotate(288 12 12)'/%3E%3Ccircle cx='12' cy='12' r='3.4'/%3E%3C/g%3E%3C/svg%3E");
 
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg:        #161513;
-    --c-surface:   #1E1C1A;
-    --c-surface-2: #262421;
-    --c-border:    #2F2C29;
-    --c-border-hi: #45413C;
-    --c-body:      #C8C2B8;
-    --c-heading:   #F1ECE4;
-    --c-muted:     #8E877E;
-    --accent:      #8EC1AC;
-    --accent-hi:   #A9D3C1;
-    --accent-dim:  rgba(142,193,172,0.10);
-    --bloom:       #E0A197;
-    --bloom-dim:   rgba(224,161,151,0.14);
+    --c-bg:        #0E1B1E;
+    --c-surface:   #13262A;
+    --c-surface-2: #1A3035;
+    --c-border:    #24393E;
+    --c-border-hi: #355157;
+    --c-body:      #CFC9BD;
+    --c-heading:   #F2ECE1;
+    --c-muted:     #8FA1A2;
+    --accent:      #5CC6D6;
+    --accent-hi:   #85D6E2;
+    --accent-dim:  rgba(92,198,214,0.10);
+    --on-accent:   #0E1B1E;
+    --bloom:       #E0565C;
+    --bloom-2:     #5CC6D6;
+    --bloom-dim:   rgba(224,86,92,0.14);
+    --leaf:        #9CBB5A;
+    --gold:        #E8B84A;
+    --swirl:       #7FA6B8;
+    --suede:       #C9A877;
+    --stitch:      rgba(242,236,225,0.22);
+    --stitch-on-accent: rgba(14,27,30,0.45);
     --shadow:      0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.25);
   }
 }
@@ -174,11 +191,13 @@ nav ul a.nav-active::after {
 }
 
 nav ul a.nav-cta {
-  color: var(--c-surface);
+  color: var(--on-accent);
+  outline: 1px dashed var(--stitch-on-accent);
+  outline-offset: -4px;
   background: var(--accent);
   margin-left: 0.5rem;
 }
-nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); }
+nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--on-accent); }
 
 /* ── Flower ornament ──────────────────────────────────────── */
 .bloom {
@@ -186,9 +205,17 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
   width: 12px;
   height: 12px;
   flex-shrink: 0;
-  background: var(--bloom);
+  background: radial-gradient(circle, var(--gold) 0 13%, var(--bloom) 14% 27%, var(--bloom-2) 28%);
   -webkit-mask: var(--bloom-mask) center / contain no-repeat;
           mask: var(--bloom-mask) center / contain no-repeat;
+}
+
+/* Stitched seam: a dashed line inset from the edge, like glove stitching */
+.glance-item,
+.resume-card,
+.contact {
+  outline: 1.5px dashed var(--stitch);
+  outline-offset: -7px;
 }
 
 /* ── Section headings ─────────────────────────────────────── */
@@ -209,10 +236,10 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 
 .section-heading::before {
   content: '';
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
-  background: var(--bloom);
+  background: radial-gradient(circle, var(--gold) 0 13%, var(--bloom) 14% 27%, var(--bloom-2) 28%);
   -webkit-mask: var(--bloom-mask) center / contain no-repeat;
           mask: var(--bloom-mask) center / contain no-repeat;
 }
@@ -220,8 +247,8 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 .section-heading::after {
   content: '';
   flex: 1;
-  height: 1px;
-  background: var(--c-border);
+  height: 1.5px;
+  background: repeating-linear-gradient(90deg, var(--stitch) 0 6px, transparent 6px 11px);
 }
 
 /* ── Inner page header ────────────────────────────────────── */
@@ -313,42 +340,51 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
   height: 260px;
   object-fit: cover;
   object-position: center 30%;
-  border-radius: 14px;
-  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  border: 5px solid var(--accent);
+  outline: 1.5px dashed var(--stitch-on-accent);
+  outline-offset: -11px;
   box-shadow: var(--shadow);
 }
 
 .hero-sprig {
   position: absolute;
-  right: -34px;
-  bottom: -22px;
-  width: 92px;
+  right: -46px;
+  bottom: -40px;
+  width: 128px;
   height: auto;
-  color: var(--accent);
   pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgba(28,39,41,0.18));
 }
 
-.hero-sprig .sprig-stem { stroke: currentColor; }
-.hero-sprig .sprig-bloom { fill: var(--bloom); }
-.hero-sprig .sprig-center { fill: var(--c-bg); }
+.hero-sprig .emb-stem   { fill: none; stroke: var(--leaf); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 3.2 1.6; }
+.hero-sprig .emb-leaf   { fill: var(--leaf); }
+.hero-sprig .emb-vein   { fill: none; stroke: var(--c-surface); stroke-width: 0.8; stroke-dasharray: 1.6 1.2; opacity: 0.7; }
+.hero-sprig .emb-swirl  { fill: none; stroke: var(--swirl); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 2.6 1.4; }
+.hero-sprig .emb-teal   { fill: var(--bloom-2); }
+.hero-sprig .emb-red    { fill: var(--bloom); }
+.hero-sprig .emb-gold   { fill: var(--gold); }
+.hero-sprig .emb-edge   { fill: none; stroke: rgba(28,39,41,0.35); stroke-width: 0.7; stroke-dasharray: 1.4 1.1; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-sprig .sprig-stem {
-    stroke-dasharray: 220;
-    stroke-dashoffset: 220;
-    animation: sprig-draw 1.6s cubic-bezier(.6,.1,.3,1) 0.3s forwards;
+  .hero-sprig .emb-stems {
+    opacity: 0;
+    animation: emb-fade 0.8s ease-out 0.3s forwards;
   }
-  .hero-sprig .sprig-flower {
+  .hero-sprig .emb-flower {
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
-    transform: scale(0.6) rotate(-30deg);
-    animation: sprig-bloom 0.7s ease-out 1.4s forwards;
+    transform: scale(0.5) rotate(-40deg);
+    animation: emb-bloom 0.7s cubic-bezier(.3,1.4,.5,1) forwards;
   }
+  .hero-sprig .emb-flower:nth-of-type(1) { animation-delay: 0.7s; }
+  .hero-sprig .emb-flower:nth-of-type(2) { animation-delay: 0.9s; }
+  .hero-sprig .emb-flower:nth-of-type(3) { animation-delay: 1.1s; }
 }
 
-@keyframes sprig-draw  { to { stroke-dashoffset: 0; } }
-@keyframes sprig-bloom { to { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes emb-fade  { to { opacity: 1; } }
+@keyframes emb-bloom { to { opacity: 1; transform: none; } }
 
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn,
@@ -377,13 +413,15 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: var(--c-surface);
+  color: var(--on-accent);
+  outline: 1px dashed var(--stitch-on-accent);
+  outline-offset: -5px;
 }
 
 .btn-primary:hover {
   background: var(--accent-hi);
   border-color: var(--accent-hi);
-  color: var(--c-surface);
+  color: var(--on-accent);
 }
 
 .btn svg,
@@ -423,7 +461,11 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 }
 
 .glance-label {
-  margin: 0 0 0.6rem;
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  padding: 0.2rem 0.55rem;
+  background: color-mix(in srgb, var(--suede) 35%, transparent);
+  border-radius: 4px;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -484,6 +526,7 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 }
 
 .resume-card {
+  outline-offset: -10px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: 14px;
@@ -649,11 +692,16 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
 /* ── Contact ──────────────────────────────────────────────── */
 .contact {
   margin-top: 4.5rem;
-  padding: 2.75rem 2.5rem;
-  border-radius: 14px;
-  background: var(--accent-dim);
-  border: 1px solid var(--c-border);
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  background-color: var(--accent);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.16) 1.3px, transparent 1.8px);
+  background-size: 15px 15px;
+  background-position: 7px 7px;
+  outline-color: var(--stitch-on-accent);
+  outline-offset: -9px;
   text-align: center;
+  color: var(--on-accent);
 }
 
 .contact h2 {
@@ -662,27 +710,63 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
   font-size: 1.9rem;
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--c-heading);
+  color: var(--on-accent);
 }
 
 .contact p {
   max-width: 48ch;
   margin: 0 auto 1.5rem;
-  color: var(--c-body);
+  color: var(--on-accent);
+  opacity: 0.88;
+}
+
+.contact .btn-primary {
+  background: var(--c-surface);
+  border-color: var(--c-surface);
+  color: var(--accent-hi);
+  outline-color: var(--stitch);
+}
+
+.contact .btn-primary:hover {
+  background: var(--c-bg);
+  color: var(--accent-hi);
 }
 
 .contact .hero-actions { justify-content: center; }
 
 /* ── Footer ───────────────────────────────────────────────── */
 .footer-div {
+  position: relative;
   margin-top: 5rem;
-  border-top: 1px solid var(--c-border);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Suede trim and stitch line along the top, like the glove cuff */
+.footer-div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  height: 1.5px;
+  background: repeating-linear-gradient(90deg, var(--stitch-on-accent) 0 6px, transparent 6px 11px);
+}
+
+.footer-div::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: var(--suede);
 }
 
 .footer-inner {
   max-width: 880px;
   margin: 0 auto;
-  padding: 1.75rem 1.5rem;
+  padding: 2rem 1.5rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -696,7 +780,6 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
   gap: 0.5rem;
   margin: 0;
   font-size: 0.85rem;
-  color: var(--c-muted);
 }
 
 .footer-ul {
@@ -713,13 +796,14 @@ nav ul a.nav-cta:hover { background: var(--accent-hi); color: var(--c-surface); 
   align-items: center;
   gap: 0.4rem;
   font-size: 0.85rem;
-  color: var(--c-muted);
+  color: var(--on-accent);
+  opacity: 0.85;
   text-decoration: none;
-  transition: color 0.15s;
+  transition: opacity 0.15s;
 }
 
 .footer-a svg { width: 15px; height: 15px; stroke-width: 2; }
-.footer-a:hover { color: var(--accent); }
+.footer-a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ── Fade-in on scroll ────────────────────────────────────── */
 .fade-in-section {

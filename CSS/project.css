@@ -6,6 +6,8 @@
 }
 
 .project-column {
+  outline: 1.5px dashed var(--stitch);
+  outline-offset: -7px;
   display: flex;
   flex-direction: column;
   background: var(--c-surface);
@@ -24,6 +26,8 @@
 }
 
 .project-media {
+  margin: 10px 10px 0;
+  border-radius: 8px;
   aspect-ratio: 16 / 10;
   background: var(--c-surface-2);
   border-bottom: 1px solid var(--c-border);
@@ -79,6 +83,8 @@
 }
 
 .repo-card {
+  outline: 1.5px dashed var(--stitch);
+  outline-offset: -6px;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
@@ -269,7 +275,7 @@
 .guide-num {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--bloom);
+  color: var(--accent);
 }
 
 .guide-optional {

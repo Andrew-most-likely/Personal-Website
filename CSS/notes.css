@@ -2,7 +2,6 @@
 .notes-grid {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--c-border);
 }
 
 .note-card {
@@ -12,7 +11,7 @@
   width: 100%;
   position: relative;
   padding: 1.5rem 0;
-  border-bottom: 1px solid var(--c-border);
+  background: linear-gradient(90deg, var(--stitch) 0 6px, transparent 6px 11px) bottom left / 11px 1.5px repeat-x;
 }
 
 .note-open {
@@ -105,7 +104,10 @@ body.modal-open { overflow: hidden; }
   overflow: hidden;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
+  border-top: 5px solid var(--accent);
   border-radius: 16px;
+  outline: 1.5px dashed var(--stitch);
+  outline-offset: -9px;
   box-shadow: 0 24px 64px rgba(0,0,0,0.25);
 }
 
